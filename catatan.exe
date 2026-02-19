@@ -1,0 +1,175 @@
+PHP MySQLi Functions
+Function	Description
+affected_rows()	Returns the number of affected rows in the previous MySQL operation
+autocommit()	Turns on or off auto-committing database modifications
+begin_transaction()	Starts a transaction
+change_user()	Changes the user of the specified database connection
+character_set_name()	Returns the default character set for the database connection
+close()	Closes a previously opened database connection
+commit()	Commits the current transaction
+connect()	Opens a new connection to the MySQL server
+connect_errno()	Returns the error code from the last connection error
+connect_error()	Returns the error description from the last connection error
+data_seek()	Adjusts the result pointer to an arbitrary row in the result-set
+debug()	Performs debugging operations
+dump_debug_info()	Dumps debugging info into the log
+errno()	Returns the last error code for the most recent function call
+error()	Returns the last error description for the most recent function call
+error_list()	Returns a list of errors for the most recent function call
+fetch_all()	Fetches all result rows as an associative array, a numeric array, or both
+fetch_array()	Fetches a result row as an associative, a numeric array, or both
+fetch_assoc()	Fetches a result row as an associative array
+fetch_field()	Returns the next field in the result-set, as an object
+fetch_field_direct()	Returns meta-data for a single field in the result-set, as an object
+fetch_fields()	Returns an array of objects that represent the fields in a result-set
+fetch_lengths()	Returns the lengths of the columns of the current row in the result-set
+fetch_object()	Returns the current row of a result-set, as an object
+fetch_row()	Fetches one row from a result-set and returns it as an enumerated array
+field_count()	Returns the number of columns for the most recent query
+field_seek()	Sets the field cursor to the given field offset
+get_charset()	Returns a character set object
+get_client_info()	Returns the MySQL client library version
+get_client_stats()	Returns statistics about client per-process
+get_client_version()	Returns the MySQL client library version as an integer
+get_connection_stats()	Returns statistics about the client connection
+get_host_info()	Returns the MySQL server hostname and the connection type
+get_proto_info()	Returns the MySQL protocol version
+get_server_info()	Returns the MySQL server version
+get_server_version()	Returns the MySQL server version as an integer
+info()	Returns information about the last executed query
+init()	Initializes MySQLi and returns a resource for use with real_connect()
+insert_id()	Returns the auto-generated id from the last query
+kill()	Asks the server to kill a MySQL thread
+more_results()	Checks if there are more results from a multi query
+multi_query()	Performs one or more queries on the database
+next_result()	Prepares the next result-set from multi_query()
+options()	Sets extra connect options and affect behavior for a connection
+ping()	Pings a server connection, or tries to reconnect if the connection has gone down
+poll()	Polls connections
+prepare()	Prepares an SQL statement for execution
+query()	Performs a query against a database
+real_connect()	Opens a new connection to the MySQL server
+real_escape_string()	Escapes special characters in a string for use in an SQL statement
+real_query()	Executes a single SQL query
+reap_async_query()	Returns result from an async SQL query
+refresh()	Refreshes/flushes tables or caches, or resets the replication server information
+rollback()	Rolls back the current transaction for the database
+select_db()	Select the default database for database queries
+set_charset()	Sets the default client character set
+set_local_infile_default()	Unsets user defined handler for load local infile command
+set_local_infile_handler()	Set callback function for LOAD DATA LOCAL INFILE command
+sqlstate()	Returns the SQLSTATE error code for the error
+ssl_set()	Used to establish secure connections using SSL
+stat()	Returns the current system status
+stmt_init()	Initializes a statement and returns an object for use with stmt_prepare()
+store_result()	Transfers a result-set from the last query
+thread_id()	Returns the thread ID for the current connection
+thread_safe()	Returns whether the client library is compiled as thread-safe
+use_result()	Initiates the retrieval of a result-set from the last query executed
+warning_count()	Returns the number of warnings from the last query in the connection
+
+
+PHP Network Functions
+Function	Description
+checkdnsrr()	Checks DNS records for type corresponding to host
+closelog()	Closes the connection of system logger
+dns_check_record()	Alias of checkdnsrr()
+dns_get_mx()	Alias of getmxrr()
+dns_get_record()	Gets the DNS resource records associated with the specified hostname
+fsockopen()	Opens an Internet or Unix domain socket connection
+gethostbyaddr()	Returns the domain name for a given IP address
+gethostbyname()	Returns the IPv4 address for a given domain/host name
+gethostbynamel()	Returns a list of IPv4 address for a given domain/host name
+gethostname()	Returns the host name
+getmxrr()	Returns the MX records for the specified internet host name
+getprotobyname()	Returns the protocol number for a given protocol name
+getprotobynumber()     	Returns the protocol name for a given protocol number
+getservbyname()	Returns the port number for a given Internet service and protocol
+getservbyport()	Returns the Internet service for a given port and protocol
+header_register_callback()	Calls a header function
+header_remove()	Removes an HTTP header previously set with the header() function
+header()	Sends a raw HTTP header to a client
+headers_list()	Returns a list of response headers to be sent to the browser
+headers_sent()	Checks if/where headers have been sent
+http_response_code()	Sets or returns the HTTP response status code
+inet_ntop()	Converts a 32bit IPv4 or 128bit IPv6 address into a readable format
+inet_pton()	Converts a readable IP address into a packed 32bit IPv4 or 128bit IPv6 format
+ip2long()	Converts an IPv4 address into a long integer
+long2ip()	Converts a long integer address into a string in IPv4 format
+openlog()	Opens the connection of system logger
+pfsockopen()	Opens a persistent Internet or Unix domain socket connection
+setcookie()	Defines a cookie to be sent along with the rest of the HTTP headers
+setrawcookie()	Defines a cookie (without URL encoding) to be sent along with the rest of the HTTP headers
+socket_get_status()	Alias of stream_get_meta_data()
+socket_set_blocking()	Alias of stream_set_blocking()
+socket_set_timeout()	Alias of stream_set_timeout()
+syslog()	Generates a system log message
+
+
+PHP Output Control Functions
+Method	Function
+flush()	Attempts to send content from the system's output buffer to the browser
+ob_clean()	Deletes all of the content from the topmost output buffer
+ob_end_clean()	Deletes the topmost output buffer and all of its contents
+ob_end_flush()	Deletes the topmost output buffer and outputs its contents
+ob_flush()	Outputs the contents of the topmost output buffer and clears the buffer
+ob_get_clean()	Returns all of the contents of the topmost output buffer and clears the buffer
+ob_get_contents()	Returns the contents of the topmost output buffer
+ob_get_flush()	Outputs and returns the contents of the topmost output buffer and then deletes the buffer
+ob_get_length()	Returns the number of bytes of data that are in the topmost output buffer
+ob_get_level()	Returns a number indicating how many output buffers are on the stack
+ob_get_status()	Returns information about the output buffers
+ob_gzhandler()	Used as a callback function for ob_start() to compress the contents of the buffer when sending it to the browser
+ob_implicit_flush()	Turns implicit flushing on or off
+ob_list_handlers()	Returns an array of callback function names that are being used by the topmost output buffer
+ob_start()	Creates a new output buffer and adds it to the top of the stack
+output_add_rewrite_var()	Used to append query string parameters to any URL in the output
+output_reset_rewrite_vars()	Removes all variables added by output_add_rewrite_var()
+
+PHP Regular Expression Functions
+Function	Description
+preg_filter()	Returns a string or an array with pattern matches replaced, but only if matches were found
+preg_grep()	Returns an array consisting only of elements from the input array which matched the pattern
+preg_last_error()	Returns an error code indicating the reason that the most recent regular expression call failed
+preg_match()	Finds the first match of a pattern in a string
+preg_match_all()	Finds all matches of a pattern in a string
+preg_replace()	Returns a string where matches of a pattern (or an array of patterns) are replaced with a substring (or an array of substrings) in a given string
+preg_replace_callback()	Given an expression and a callback, returns a string where all matches of the expression are replaced with the substring returned by the callback
+preg_replace_callback_array()	Given an array associating expressions with callbacks, returns a string where all matches of each expression are replaced with the substring returned by the callback
+preg_split()	Breaks a string into an array using matches of a regular expression as separators
+preg_quote()	Escapes characters that have a special meaning in regular expressions by putting a backslash in front of them
+
+
+
+
+
+PHP SimpleXML Functions
+Function	Description
+__construct()	Creates a new SimpleXMLElement object
+__toString()	Returns the string content of an element
+addAttribute()	Appends an attribute to the SimpleXML element
+addChild()	Appends a child element the SimpleXML element
+asXML()	Returns a well-formed XML string (XML version 1.0) from a SimpleXML object
+attributes()	Returns the attributes/values of an element
+children()	Returns the children of a specified node
+count()	Counts the children of a specified node
+getDocNamespaces()	Returns the namespaces declared in document
+getName()	Returns the name of an element
+getNamespaces()	Returns the namespaces used in document
+registerXPathNamespace()	Creates a namespace context for the next XPath query
+saveXML()	Alias of asXML()
+simplexml_import_dom()	Returns a SimpleXMLElement object from a DOM node
+simplexml_load_file()	Converts an XML document to an object
+simplexml_load_string()	Converts an XML string to an object
+xpath()	Runs an XPath query on XML data
+
+
+PHP SimpleXML Iteration Functions
+Function	Description
+current()	Returns the current element
+getChildren()	Returns the child elements of the current element
+hasChildren()	Checks whether the current element has children
+key()	Returns the XML tag name of the current element
+next()	Moves to the next element
+rewind()	Rewinds to the first element
+valid()	Checks whether the current element is valid

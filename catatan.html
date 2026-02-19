@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dokumentasi Fungsi PHP - Tema Gelap Modern</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome untuk ikon (opsional) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Custom scrollbar untuk tampilan lebih modern */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #1e1e2f;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #4a4a6a;
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6b6b8b;
+        }
+        
+        /* Untuk print */
+        @media print {
+            body {
+                background-color: white !important;
+                color: black !important;
+            }
+            .bg-gray-900, .bg-gray-800, .bg-gray-700 {
+                background-color: #f3f4f6 !important;
+                color: #111 !important;
+            }
+            .text-gray-300, .text-gray-400 {
+                color: #333 !important;
+            }
+            .border-gray-700 {
+                border-color: #ddd !important;
+            }
+            .bg-gradient-to-r {
+                background: #e5e7eb !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+
+    <!-- Container Utama -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- Header dengan gradient -->
+        <div class="mb-10 text-center">
+            <div class="inline-block p-3 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl shadow-lg mb-4">
+                <i class="fas fa-code text-white text-3xl"></i>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+                Dokumentasi Fungsi PHP
+            </h1>
+            <p class="text-gray-400 text-lg mt-3 max-w-2xl mx-auto">
+                Koleksi lengkap fungsi MySQLi, Network, Output Control, Regular Expression, SimpleXML, dan SimpleXML Iteration
+            </p>
+            <div class="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <!-- Statistik Cepat -->
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 mb-10">
+            <div class="bg-gray-800 rounded-xl p-4 text-center border border-gray-700 hover:border-indigo-500 transition-all">
+                <div class="text-indigo-400 text-2xl font-bold">84</div>
+                <div class="text-gray-400 text-sm">MySQLi</div>
+            </div>
+            <div class="bg-gray-800 rounded-xl p-4 text-center border border-gray-700 hover:border-purple-500 transition-all">
+                <div class="text-purple-400 text-2xl font-bold">33</div>
+                <div class="text-gray-400 text-sm">Network</div>
+            </div>
+            <div class="bg-gray-800 rounded-xl p-4 text-center border border-gray-700 hover:border-pink-500 transition-all">
+                <div class="text-pink-400 text-2xl font-bold">17</div>
+                <div class="text-gray-400 text-sm">Output Control</div>
+            </div>
+            <div class="bg-gray-800 rounded-xl p-4 text-center border border-gray-700 hover:border-blue-500 transition-all">
+                <div class="text-blue-400 text-2xl font-bold">10</div>
+                <div class="text-gray-400 text-sm">Regex</div>
+            </div>
+            <div class="bg-gray-800 rounded-xl p-4 text-center border border-gray-700 hover:border-green-500 transition-all">
+                <div class="text-green-400 text-2xl font-bold">17</div>
+                <div class="text-gray-400 text-sm">SimpleXML</div>
+            </div>
+            <div class="bg-gray-800 rounded-xl p-4 text-center border border-gray-700 hover:border-yellow-500 transition-all">
+                <div class="text-yellow-400 text-2xl font-bold">7</div>
+                <div class="text-gray-400 text-sm">Iteration</div>
+            </div>
+        </div>
+
+        <!-- Fungsi MySQLi -->
+        <div class="mb-12">
+            <div class="flex items-center gap-3 mb-5">
+                <div class="w-1 h-8 bg-indigo-500 rounded-full"></div>
+                <h2 class="text-2xl font-semibold text-white flex items-center gap-2">
+                    <i class="fas fa-database text-indigo-400"></i>
+                    PHP MySQLi Functions
+                </h2>
+                <span class="bg-indigo-600 text-xs px-3 py-1 rounded-full text-white ml-auto">84 fungsi</span>
+            </div>
+            <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden shadow-2xl">
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-gray-700">
+                            <tr>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-gray-200 uppercase tracking-wider">Function</th>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-gray-200 uppercase tracking-wider">Deskripsi (Terjemahan)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-700">
+                            <!-- Data akan diisi dengan loop JavaScript agar lebih rapi -->
+                            <tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">affected_rows()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan jumlah baris yang terpengaruh pada operasi MySQL sebelumnya</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">autocommit()</td><td class="px-6 py-3 text-sm text-gray-300">Mengaktifkan atau menonaktifkan mode auto-commit untuk modifikasi database</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">begin_transaction()</td><td class="px-6 py-3 text-sm text-gray-300">Memulai sebuah transaksi</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">change_user()</td><td class="px-6 py-3 text-sm text-gray-300">Mengubah pengguna dari koneksi database yang ditentukan</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">character_set_name()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan set karakter default untuk koneksi database</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">close()</td><td class="px-6 py-3 text-sm text-gray-300">Menutup koneksi database yang sebelumnya dibuka</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">commit()</td><td class="px-6 py-3 text-sm text-gray-300">Melakukan commit pada transaksi saat ini</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">connect()</td><td class="px-6 py-3 text-sm text-gray-300">Membuka koneksi baru ke server MySQL</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">connect_errno()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan kode error dari koneksi terakhir</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">connect_error()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan deskripsi error dari koneksi terakhir</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">data_seek()</td><td class="px-6 py-3 text-sm text-gray-300">Menyesuaikan pointer hasil ke baris sembarang dalam result-set</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">debug()</td><td class="px-6 py-3 text-sm text-gray-300">Melakukan operasi debugging</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">dump_debug_info()</td><td class="px-6 py-3 text-sm text-gray-300">Membuang info debugging ke dalam log</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">errno()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan kode error terakhir untuk panggilan fungsi terbaru</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">error()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan deskripsi error terakhir untuk panggilan fungsi terbaru</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">error_list()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan daftar error untuk panggilan fungsi terbaru</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">fetch_all()</td><td class="px-6 py-3 text-sm text-gray-300">Mengambil semua baris hasil sebagai array asosiatif, array numerik, atau keduanya</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">fetch_array()</td><td class="px-6 py-3 text-sm text-gray-300">Mengambil satu baris hasil sebagai array asosiatif, array numerik, atau keduanya</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">fetch_assoc()</td><td class="px-6 py-3 text-sm text-gray-300">Mengambil satu baris hasil sebagai array asosiatif</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">fetch_field()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan field berikutnya dalam result-set, sebagai sebuah objek</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">fetch_field_direct()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan meta-data untuk satu field dalam result-set, sebagai sebuah objek</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">fetch_fields()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan sebuah array objek yang mewakili field-field dalam result-set</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">fetch_lengths()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan panjang dari kolom-kolom pada baris saat ini di result-set</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">fetch_object()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan baris saat ini dari result-set, sebagai sebuah objek</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">fetch_row()</td><td class="px-6 py-3 text-sm text-gray-300">Mengambil satu baris dari result-set dan mengembalikannya sebagai array terindeks</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">field_count()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan jumlah kolom untuk query terbaru</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">field_seek()</td><td class="px-6 py-3 text-sm text-gray-300">Mengatur kursor field ke offset field yang diberikan</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">get_charset()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan objek set karakter</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">get_client_info()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan versi library klien MySQL</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">get_client_stats()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan statistik tentang klien per-proses</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">get_client_version()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan versi library klien MySQL sebagai integer</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">get_connection_stats()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan statistik tentang koneksi klien</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">get_host_info()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan hostname server MySQL dan tipe koneksi</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">get_proto_info()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan versi protokol MySQL</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">get_server_info()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan versi server MySQL</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">get_server_version()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan versi server MySQL sebagai integer</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">info()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan informasi tentang query terakhir yang dieksekusi</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">init()</td><td class="px-6 py-3 text-sm text-gray-300">Menginisialisasi MySQLi dan mengembalikan sumber daya untuk digunakan dengan real_connect()</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">insert_id()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan id yang di-generate otomatis dari query terakhir</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">kill()</td><td class="px-6 py-3 text-sm text-gray-300">Meminta server untuk menghentikan thread MySQL</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">more_results()</td><td class="px-6 py-3 text-sm text-gray-300">Memeriksa apakah masih ada hasil dari multi query</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">multi_query()</td><td class="px-6 py-3 text-sm text-gray-300">Melakukan satu atau lebih query pada database</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">next_result()</td><td class="px-6 py-3 text-sm text-gray-300">Menyiapkan result-set berikutnya dari multi_query()</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">options()</td><td class="px-6 py-3 text-sm text-gray-300">Mengatur opsi koneksi tambahan dan mempengaruhi perilaku untuk sebuah koneksi</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">ping()</td><td class="px-6 py-3 text-sm text-gray-300">Melakukan ping ke koneksi server, atau mencoba untuk terhubung kembali jika koneksi telah putus</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">poll()</td><td class="px-6 py-3 text-sm text-gray-300">Melakukan poll pada koneksi-koneksi</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">prepare()</td><td class="px-6 py-3 text-sm text-gray-300">Mempersiapkan pernyataan SQL untuk dieksekusi</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">query()</td><td class="px-6 py-3 text-sm text-gray-300">Melakukan sebuah query terhadap database</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">real_connect()</td><td class="px-6 py-3 text-sm text-gray-300">Membuka koneksi baru ke server MySQL</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">real_escape_string()</td><td class="px-6 py-3 text-sm text-gray-300">Melakukan escape pada karakter khusus dalam sebuah string untuk digunakan dalam pernyataan SQL</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">real_query()</td><td class="px-6 py-3 text-sm text-gray-300">Mengeksekusi query SQL tunggal</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">reap_async_query()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan hasil dari query async SQL</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">refresh()</td><td class="px-6 py-3 text-sm text-gray-300">Menyegarkan/membersihkan tabel atau cache, atau mereset informasi server replikasi</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">rollback()</td><td class="px-6 py-3 text-sm text-gray-300">Melakukan rollback pada transaksi saat ini untuk database</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">select_db()</td><td class="px-6 py-3 text-sm text-gray-300">Memilih database default untuk query database</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">set_charset()</td><td class="px-6 py-3 text-sm text-gray-300">Mengatur set karakter klien default</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">set_local_infile_default()</td><td class="px-6 py-3 text-sm text-gray-300">Membatalkan pengaturan handler yang ditentukan pengguna untuk perintah load local infile</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">set_local_infile_handler()</td><td class="px-6 py-3 text-sm text-gray-300">Mengatur fungsi callback untuk perintah LOAD DATA LOCAL INFILE</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">sqlstate()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan kode error SQLSTATE untuk error tersebut</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">ssl_set()</td><td class="px-6 py-3 text-sm text-gray-300">Digunakan untuk membangun koneksi aman menggunakan SSL</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">stat()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan status sistem saat ini</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">stmt_init()</td><td class="px-6 py-3 text-sm text-gray-300">Menginisialisasi pernyataan dan mengembalikan objek untuk digunakan dengan stmt_prepare()</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">store_result()</td><td class="px-6 py-3 text-sm text-gray-300">Memindahkan result-set dari query terakhir</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">thread_id()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan ID thread untuk koneksi saat ini</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">thread_safe()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan apakah library klien dikompilasi sebagai thread-safe</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">use_result()</td><td class="px-6 py-3 text-sm text-gray-300">Memulai pengambilan result-set dari query terakhir yang dieksekusi</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">warning_count()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan jumlah peringatan dari query terakhir pada koneksi</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- PHP Network Functions -->
+        <div class="mb-12">
+            <div class="flex items-center gap-3 mb-5">
+                <div class="w-1 h-8 bg-purple-500 rounded-full"></div>
+                <h2 class="text-2xl font-semibold text-white flex items-center gap-2">
+                    <i class="fas fa-network-wired text-purple-400"></i>
+                    PHP Network Functions
+                </h2>
+                <span class="bg-purple-600 text-xs px-3 py-1 rounded-full text-white ml-auto">33 fungsi</span>
+            </div>
+            <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden shadow-2xl">
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-gray-700">
+                            <tr>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-gray-200 uppercase tracking-wider">Function</th>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-gray-200 uppercase tracking-wider">Deskripsi (Terjemahan)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-700">
+                            <tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-purple-300">checkdnsrr()</td><td class="px-6 py-3 text-sm text-gray-300">Memeriksa catatan DNS untuk tipe yang sesuai dengan host</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-purple-300">closelog()</td><td class="px-6 py-3 text-sm text-gray-300">Menutup koneksi system logger</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-purple-300">dns_check_record()</td><td class="px-6 py-3 text-sm text-gray-300">Alias dari checkdnsrr()</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-purple-300">dns_get_mx()</td><td class="px-6 py-3 text-sm text-gray-300">Alias dari getmxrr()</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-purple-300">dns_get_record()</td><td class="px-6 py-3 text-sm text-gray-300">Mendapatkan catatan sumber daya DNS yang terkait dengan nama host yang ditentukan</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-purple-300">fsockopen()</td><td class="px-6 py-3 text-sm text-gray-300">Membuka koneksi socket Internet atau domain Unix</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-purple-300">gethostbyaddr()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan nama domain untuk alamat IP yang diberikan</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-purple-300">gethostbyname()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan alamat IPv4 untuk nama domain/host yang diberikan</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-purple-300">gethostbynamel()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan daftar alamat IPv4 untuk nama domain/host yang diberikan</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-purple-300">gethostname()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan nama host</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-purple-300">getmxrr()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan catatan MX untuk nama host internet yang ditentukan</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-purple-300">getprotobyname()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan nomor protokol untuk nama protokol yang diberikan</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-purple-300">getprotobynumber()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan nama protokol untuk nomor protokol yang diberikan</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-purple-300">getservbyname()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan nomor port untuk layanan dan protokol Internet yang diberikan</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-purple-300">getservbyport()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan layanan Internet untuk port dan protokol yang diberikan</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-purple-300">header_register_callback()</td><td class="px-6 py-3 text-sm text-gray-300">Memanggil fungsi header</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-purple-300">header_remove()</td><td class="px-6 py-3 text-sm text-gray-300">Menghapus header HTTP yang sebelumnya diatur dengan fungsi header()</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-purple-300">header()</td><td class="px-6 py-3 text-sm text-gray-300">Mengirim header HTTP mentah ke klien</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-purple-300">headers_list()
