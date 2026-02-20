@@ -1,5 +1,7 @@
 <?php 
 include '../includes/header.php';
+include '../config/koneksi.php'
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +12,7 @@ include '../includes/header.php';
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
 </head>
-<body class="bg-gray-900 font-sans">
+<body class="bg-gray-900 font-sans ">
 
     <section id="hero">
     <div>
@@ -25,13 +27,48 @@ include '../includes/header.php';
         </div>
     </div>
     </section>
-    <section>
-        <div>
+          <div>
             <div class="h-16 p-16">
                 
                 <h2 class="font-semibold bg-gradient-to-r from-pink-950 via-indigo-500 to-teal-900 bg-clip-text text-transparent text-center text-3xl">BUKU TERBARU</h2>
             </div>
         </div>
+    <div>
+        <div>
+            <div>
+                <img src="" alt="">
+            </div>
+            <div>   
+                <h4 class="text-gray-400">JUDUL <br><?= $row['judul'] ?></h4>
+            </div>
+        </div>
+        <div>
+            <div>
+                <img src="" alt="">
+            </div>
+            <div>
+
+            </div>
+        </div>
+        <div>
+            <div>
+                <img src="" alt="">
+            </div>
+            <div>
+
+            </div>
+        </div>
+        <div>
+            <div>
+                <img src="" alt="">
+            </div>
+            <div>
+
+            </div>
+        </div>
+    </div>
+    <section>
+  
     </section>
 
     <?= include '../includes/footer.php' ?> 
