@@ -1,111 +1,96 @@
 <?php 
-$DataOp = [
+session_start();
+require 'connection.php';
+if (!isset($_SESSION['login'])){
+    header('Location: login.php');
+    exit;
+}
+//paganation
+$countdatadividepage= 4;
+$countdata=count(QuerySelect("SELECT * FROM onepiece"));
+$countpage=ceil($countdata/$countdatadividepage);
+$pageactive = (isset($_GET['halaman'])) ? $_GET['halaman']: 1;
+$firstindex = ($countdatadividepage * $pageactive)-$countdatadividepage;
 
-    [
-    "name"=> "strawhat",    
-    "kapten" => "luffy",
-    "kru"=>"nami,zoro,sanji",
-    "lambang"=> "img/strawhat.png"
-    ],
+var_dump($firstindex);
+var_dump($pageactive);
+var_dump($countpage);
 
-    [
-    "name"=> "akagami",    
-    "kapten" => "shanks",
-    "kru"=>"ben beckman,yasop,lucky roux",
-    "lambang"=> "img/shanks.jpg"
-    ],
-    [
-    "name"=> "whitebeard",    
-    "kapten" => "edward newgate",
-    "kru"=>"marco,ace,jozu",
-    "lambang"=> "img/shirohige.jpg"
-    ],
-    [
-    "name"=> "Bigmom",    
-    "kapten" => "charlote linlin",
-    "kru"=>"katakuri,smoothie,cracker",
-    "lambang"=> "img/bigmom.jpg"
-    ],
-    [
-    "name"=> "heart",    
-    "kapten" => "trafalgar law",
-    "kru"=>"bepo,shaci,penguin",
-    "lambang"=> "img/law.jpg"
-    ],
-    [
-    "name"=> "roger",    
-    "kapten" => "Gol D roger",
-    "kru"=>"rayleigh,gaban,crocus",
-    "lambang"=> "img/roger.jpg"
-    ],
-    [
-    "name"=> "buggy",    
-    "kapten" => "buggy",
-    "kru"=>"alvida,mohji,cabaji",
-    "lambang"=> "img/buggy.jpg"
-    ],
-];
+$data = QuerySelect("SELECT * FROM onepiece LIMIT $firstindex, $countdatadividepage ");
 
-
-if (isset($_POST['submit'])) {
-    if ($_POST['nama'] == "admin" && $_POST['pw'] == "123"){
-        header("Location: admin.php");
-        exit ;
-        }else{
-        $err = true;
-        };
-   };
-
+if(isset($_POST['search'])){
+    $data = Search($_POST['keyword']);
+}
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>latihan</title>
-    <!-- cdn -->
-     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- cdn css -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>app</title>
 </head>
 <body>
-    <section class="ml-4">
-
-        <h2 class="font-mono text-2xl font-bold text-teal-400">Daftar Bajak laut</h2>
-        <?php foreach($DataOp as $Op) {?>
-        <ul>
-            
-            <?php 
-        ?>
-        <img class="w-10 h-10" src="<?= $Op['lambang']?>">
+    
+    
+    <h2 class="text-center p-4 font-semibold text-4xl font-sans text-amber-400"> Daftar Data</h2>
+    <section class="flex justify-center gap-4">
         
-        <li><?php echo $Op["name"]?></li>
-        <li><?php echo $Op["kapten"]?></li>
-        <li> <?php echo $Op['kru'] ?></li>
-        
-    </ul>
-    <?php }?>
+        <div>
+            <a class=" font-semibold p-4 rounded-full bg-blue-400" href="add.php">Tambah data</a>
+        </div>
+        <form class="" action="" method="post">
+            <input class="p-2 border-1 border-black rounded-sm" type="text" placeholder="cari data" name="keyword">
+            <button class="bg-gray-600 text-white rounded-full p-2 font-semibold" type="submit" name="search" autocomplete="off">search</button>
+        </form>
+        <div>
+            <a class="mx-10 my-4 bg-gray-600 text-white rounded-full px-4 p-2 font-semibold"  href="logout.php">logout</a>
+        </div>
+        <div>
+            <?php if($pageactive > 1){?>
+            <a href="?halaman=<?= $pageactive - 1 ?>">prev</a>
+            <?php }?>
+            <?php for ($i=1; $i <= $countpage ; $i++) {?>
+            <?php if($i == $pageactive){?>
+            <a class="font-bold text-2xl font-sans " href="?halaman=<?= $i ?>"><?= $i ?></a> 
+            <?php }else{?>
+            <a href="?halaman=<?= $i ?>"><?= $i  ?></a> 
+            <?php }?>
+            <?php }?>
+            <?php if( $pageactive < $countpage){?>
+            <a href="?halaman=<?= $pageactive + 1 ?>">next</a>
+            <?php }?>
+        </div>
 </section>
-<section class="p-14">
-    <form action="" method="post">
+<table class="m-auto mt-10">
 
-    <h2 class="font-bold text-center">login</h2>
-    <?php if(isset($err)){?>
-    <p>login gagal</p>
+    <tr >
+        <th class="p-4 border-2 border-black">No</th>
+        <th class="p-4 border-2 border-black">Aksi</th>
+        <th class="p-4 border-2 border-black">nama BL</th>
+        <th class="p-4 border-2 border-black">Nama Char</th>
+        <th class="p-4 border-2 border-black">Posisi</th>
+        <th class="p-4 border-2 border-black">lambang</th>
+    </tr>
+    <?php $i = 1?>
+    <?php foreach($data as $row) { ?>
+    <tr>
+        <td class="p-4 border-2 border-black"><?= $i ?></td>
+        <td class="p-4 border-2 border-black">
+            <a href="update.php?id=<?= $row['id'] ?>">Ubah</a> |
+            <a href="delete.php?id=<?= $row['id'] ?>">Hapus</a>
+        </td>
+        <td class="p-4 border-2 border-black"><?php echo $row['namabl']?></td>
+        <td class="p-4 border-2 border-black"><?php echo $row['nama']?></td>
+        <td class="p-4 border-2 border-black"><?php echo $row['posisi']?></td>
+        <td  class="p-4 border-2 border-black"><img class="h-14 w-14" src="img/<?=  $row['lambangbl']  ?>?>" alt=""></td>
+    </tr>
+    <?php $i++?>
     <?php }?>
-    <div>
-        <label for="nama">username :</label>
-        <input type="text" name="nama" id="nama">
-    </div>
-    <div>
-        <label for="pw">password :</label>
-        <input type="password" name="pw" id="pw">
-    </div>
-    <div>
-        <button class="bg-teal-500 rounded-full p-2 ml-40" type="submit" name="submit">kirim</button>
-    </div>
-    </form>
-</section>
+</table>
+
 </body>
-
-</html>
 </html>

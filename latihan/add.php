@@ -1,4 +1,9 @@
 <?php 
+session_start();
+if (!isset($_SESSION['login'])){
+    header('Location: login.php');
+    exit;
+}
 require 'connection.php';
 
 if (isset($_POST['submit'])){
@@ -23,7 +28,7 @@ if (isset($_POST['submit'])){
      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>add</title>
 </head>
-<body class="h-screen flex items-center justify-center">
+<body class="bg-gray-900 h-screen flex items-center justify-center">
     
 
     <section class="font-sans font-semibold bg-slate-200 p-8 rounded-md">
@@ -59,7 +64,7 @@ if (isset($_POST['submit'])){
         </div>
     </form>
     <div>
-        <a class="text-blue-500" href="app.php">KEMBALI KE HALAMAN UTAMA</a>
+        <a class="text-blue-500" href="index.php">KEMBALI KE HALAMAN UTAMA</a>
     </div>
 </section>
 

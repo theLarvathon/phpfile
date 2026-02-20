@@ -1,8 +1,13 @@
 <?php
-
-use Dom\Mysql;
-
 require 'connection.php';
+
+session_start();
+if (!isset($_SESSION['login'])){
+    header('Location: login.php');
+    exit;
+}
+
+
 
 
 
@@ -70,7 +75,7 @@ if (mysqli_affected_rows($connect) > 0  ){
         </div>
     </form>
     <div>
-        <a class="text-blue-500" href="app.php">KEMBALI KE HALAMAN UTAMA</a>
+        <a class="text-blue-500" href="index.php">KEMBALI KE HALAMAN UTAMA</a>
     </div>
 </section>
 

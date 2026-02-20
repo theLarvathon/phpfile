@@ -1,4 +1,5 @@
 <?php 
+
 require "connection.php";
 
 ?>
@@ -12,7 +13,7 @@ require "connection.php";
      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>Register</title>
 </head>
-<body class="h-screen flex items-center justify-center ">
+<body class="h-screen flex items-center justify-center bg-gray-900">
     <section class="font-sans font-semibold bg-slate-200 p-10 rounded-md">
         <div>
             <h1 class="p-4 text-3xl font-sans font-bold text-gray-700">Halaman Register  📌</h1>
@@ -44,6 +45,7 @@ require "connection.php";
                 <button class="mx-10 my-4 bg-gray-600 text-white rounded-full px-4 p-2 font-semibold"  type="submit" name="register">Register</button>
             </div>
         </form>
+        <p class="font-semibold font-sans text-steal-100 text-end"><a href="login.php">sudah punya akun?</a></p>
     </section>
 </body>
 </html>

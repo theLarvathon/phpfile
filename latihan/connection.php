@@ -59,4 +59,6 @@ function register($data){
 
     return mysqli_affected_rows($connect);
 }
+
+
 ?>
