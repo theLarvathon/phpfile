@@ -12,19 +12,19 @@
 
 <!-- NAVBAR - muncul di semua halaman -->
 <nav class="bg-gray-800 shadow-lg text-white">
-    <div class="container mx-auto px-4">
-        <div class="flex justify-between items-center h-16">
-            <div class="text-xl font-bold">📚 Perpustakaan</div>
-            <div class="flex space-x-4">
+    <div class="container mx-auto px-8">
+        <div class="flex justify-between text-lg items-center h-24">
+            <div class="text-3xl font-bold">📚 Perpustakaan</div>
+            <div class="flex space-x-4 ">
                 <a href="../public/index.php" class="hover:text-blue-600">Home</a>
                 <a href="../public/daftar_buku.php" class="hover:text-blue-600">Buku</a>
-                <?php if(isset($_SESSION['login'])): ?>
-                    <a href="../<?= $_SESSION['role'] ?>/dashboard.php" class="hover:text-blue-600">Dashboard</a>
-                    <a href="../proses/logout.php" class="hover:text-red-600">Logout</a>
-                <?php else: ?>
-                    <a href="../public/login.php" class="hover:text-blue-600">Login</a>
-                    <a href="../public/register.php" class="hover:text-blue-600">Register</a>
-                <?php endif; ?>
+                <a href="../public/login.php" class="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition duration-300 flex items-center">
+                    <i class="fas fa-sign-in-alt mr-1"></i> <span class="hidden sm:inline">Login</span>
+                </a>
+                <a href="../public/register.php" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition duration-300 hidden sm:flex items-center">
+                    <i class="fas fa-user-plus mr-1"></i> Register
+                </a>
+    
             </div>
         </div>
     </div>

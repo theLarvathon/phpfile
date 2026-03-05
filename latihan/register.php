@@ -47,5 +47,6 @@ require "connection.php";
         </form>
         <p class="font-semibold font-sans text-steal-100 text-end"><a href="login.php">sudah punya akun?</a></p>
     </section>
+    
 </body>
 </html>

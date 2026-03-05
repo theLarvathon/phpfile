@@ -158,7 +158,7 @@ if($presentase >= 50){
 
                     <!-- Action buttons -->
                     <div class="flex flex-col sm:flex-row gap-3">
-                        <a href="login.php" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 rounded-xl transition flex items-center justify-center">
+                        <a href="../proses/pinjam_proses.php?id=<?= $row_buku['id_buku'] ?>" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 rounded-xl transition flex items-center justify-center">
                             <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linecap="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                             </svg>
