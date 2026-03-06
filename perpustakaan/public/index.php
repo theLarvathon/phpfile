@@ -88,7 +88,7 @@ include '../config/koneksi.php'
                     <div class="text-gray-400">Anggota</div>
                 </div>
                 <div class="bg-gray-800 rounded-xl p-8 text-center border border-gray-700 hover:border-indigo-500 transition">
-                    <div class="text-green-400 text-4xl font-bold mb-2">1+</div>
+                    <div class="text-green-400 text-4xl font-bold mb-2"><?= $sedangminjam ?>+</div>
                     <div class="text-gray-400">Peminjam</div>
                 </div>
             </div>

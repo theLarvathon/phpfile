@@ -21,7 +21,10 @@ if(isset($_POST['submit'])){
     $gambar = 'https://placehold.co/400x500'; 
     $tanggal_input = date('Y-m-d'); 
     
-    $addbook = mysqli_query($connect,"INSERT INTO books (judul,penulis,penerbit,tahun_terbit,stok_total,stok_tersedia,lokasi_rak,deskripsi,sampul,tanggal_masuk,kategori) VALUES('$judul','$penulis','$penerbit','$tahunterbit','$stoktotal','$stoktersedia','$lokasirak','$deskripsi','$gambar','$tanggal_input','$kategori')");
+    $addbook = mysqli_query($connect,"INSERT INTO books (judul,penulis,penerbit,tahun_terbit,stok_total,stok_tersedia,lokasi_rak,deskripsi,sampul,
+    tanggal_masuk,kategori) VALUES('$judul','$penulis','$penerbit','$tahunterbit','$stoktotal','$stoktersedia','$lokasirak','$deskripsi','$gambar',
+    '$tanggal_input','$kategori')");
+    
     if($addbook){
         $_SESSION['addbooksucces'] = "buku berhasil ditambahkan😁!";
         header('Location: ../admin/tambah_buku.php');

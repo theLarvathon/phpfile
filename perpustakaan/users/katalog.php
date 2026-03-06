@@ -46,14 +46,11 @@ require '../config/koneksi.php';
                     <span class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">Syafik</span>
                     <span class="text-gray-400 text-sm hidden sm:inline">· Katalog Buku</span>
                 </div>
-                <div class="hidden md:block flex-1 max-w-md mx-8">
-                    <div class="relative">
-                        <input type="text" placeholder="Cari judul, penulis, penerbit" 
-                               class="w-full bg-dark-300 border border-dark-400 rounded-lg py-2 pl-10 pr-4 text-sm focus:outline-none focus:border-blue-500 transition">
-                        <svg class="absolute left-3 top-2.5 h-4 w-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linecap="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                        </svg>
-                    </div>
+                 <div class="hidden md:flex items-center space-x-6">
+                    <a href="dashboard.php" class="text-gray-400 hover:text-white text-sm transition">Dashboard</a>
+                    <a href="katalog.php" class="text-white text-sm border-b border-blue-500 pb-1">Katalog</a>
+                    <a href="peminjaman_saya.php" class="text-gray-400 hover:text-white text-sm transition">Peminjaman</a>
+                    <a href="denda.php" class="text-gray-400 hover:text-white text-sm transition ">Denda</a>
                 </div>
                 <div class="flex items-center space-x-4">
                     <button class="p-2 hover:bg-dark-300 rounded-lg transition">

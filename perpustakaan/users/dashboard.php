@@ -17,6 +17,8 @@ $erraddloans = $_SESSION['addloanserror'] ??null;
 $errdelloans = $_SESSION['deleteloanserror'] ??null;
 $errstok = $_SESSION['stokhabis'] ??null;
 $errcek = $_SESSION['errorcek'] ??null;
+$succes = $_SESSION['success'] ??null;
+$error = $_SESSION['error'] ??null;
 
 
 $addloans = $_SESSION['addloanssucces'] ??null;
@@ -68,14 +70,12 @@ $delloans = $_SESSION['deleteloanssucces'] ??null;
                 </div>
 
                 <!-- Search Bar (Desktop) -->
-                <div class="hidden md:block flex-1 max-w-md mx-8">
-                    <div class="relative">
-                        <input type="text" placeholder="Cari judul buku, penulis..." 
-                               class="w-full bg-dark-300 border border-dark-400 rounded-lg py-2 pl-10 pr-4 text-sm focus:outline-none focus:border-blue-500 transition">
-                        <svg class="absolute left-3 top-2.5 h-4 w-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linecap="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                        </svg>
-                    </div>
+                 <div class="hidden md:flex items-center space-x-6">
+                    <a href="dashboard.php" class="text-white text-sm border-b border-blue-500 pb-1">Dashboard</a>
+                    <a href="katalog.php" class="text-gray-400 hover:text-white text-sm transition">Katalog</a>
+                    <a href="peminjaman_saya.php" class="text-gray-400 hover:text-white text-sm transition">Peminjaman</a>
+                    <a href="denda.php" class="text-gray-400 hover:text-white text-sm transition ">Denda</a>
+               
                 </div>
 
                 <!-- Right Menu -->
@@ -183,7 +183,7 @@ $delloans = $_SESSION['deleteloanssucces'] ??null;
                 </div>
                 <div class="bg-dark-200 rounded-lg px-4 py-2 border border-dark-300">
                     <span class="text-sm text-gray-400">Denda</span>
-                    <div class="text-2xl font-bold text-red-400">Rp0</div>
+                    <div class="text-2xl font-bold text-red-400">Rp<?= $totaldendauser['jumlahdenda']??0; ?>k</div>
                 </div>
             </div>
         </div>
@@ -314,6 +314,12 @@ $delloans = $_SESSION['deleteloanssucces'] ??null;
         <?php if ($errcek): ?>
             alert("<?php echo $errcek; ?>");
         <?php endif; ?>
+        <?php if ($error): ?>
+            alert("<?php echo $error; ?>");
+        <?php endif; ?>
+        <?php if ($succes): ?>
+            alert("<?php echo $succes; ?>");
+        <?php endif; ?>
        
     </script>
     <?php 
@@ -322,8 +328,10 @@ $delloans = $_SESSION['deleteloanssucces'] ??null;
     $_SESSION['returnloanserror'],
     $_SESSION['stokhabis'],
     $_SESSION['addloanssuccess'],
-    $_SESSION['returnloanssuccess'],
-    $_SESSION['errorcek']
+    $_SESSION['errorcek'],
+    $_SESSION['success'],
+    $_SESSION['error']
+
 );
     
     ?>

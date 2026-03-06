@@ -58,6 +58,7 @@ require '../config/koneksi.php';
                     <a href="dashboard.php" class="text-gray-400 hover:text-white text-sm transition">Dashboard</a>
                     <a href="katalog.php" class="text-gray-400 hover:text-white text-sm transition">Katalog</a>
                     <a href="peminjaman_saya.php" class="text-white text-sm border-b border-blue-500 pb-1">Peminjaman</a>
+                    <a href="denda.php" class="text-gray-400 hover:text-white text-sm transition ">Denda</a>
                 </div>
 
                 <!-- Right Menu -->
@@ -81,7 +82,7 @@ require '../config/koneksi.php';
         <div class="flex gap-2 border-b border-dark-300 pb-4 mb-6">
             <span class="text-sm px-4 py-2 bg-dark-200 rounded-lg text-blue-400 border border-blue-500/30">Sedang Dipinjam</span>
             <span class="text-sm px-4 py-2 bg-dark-200 rounded-lg text-gray-400 hover:bg-dark-300 transition cursor-default">Riwayat</span>
-            <span class="text-sm px-4 py-2 bg-dark-200 rounded-lg text-gray-400 hover:bg-dark-300 transition cursor-default">Denda</span>
+            <a href="denda.php" class="text-sm px-4 py-2 bg-dark-200 rounded-lg text-gray-400 hover:bg-dark-300 transition cursor-default">Denda</a>
         </div>
 
         <!-- LIST PEMINJAMAN AKTIF (style seperti card di dashboard) -->

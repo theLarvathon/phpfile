@@ -3,13 +3,29 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 } 
 require '../config/koneksi.php';
+// 1. Cek GET dan SESSION sebelum digunakan
+if (!isset($_GET['id'])) {
+    header('Location: ../users/dashboard.php');
+    exit();
+}
+
+if (!isset($_SESSION['username'], $_SESSION['id_user'])) {
+    $_SESSION['error'] = "Silakan login terlebih dahulu.";
+    header('Location: ../public/login.php');
+    exit();
+}
 //get data
 $idbuku = (int)$_GET['id'];
 $username = mysqli_real_escape_string($connect,$_SESSION['username']);
 $id_users = (int)$_SESSION['id_user'];
 
 //cek stok
-$dbstok = QuerySelect("SELECT * FROM books WHERE id_buku = $idbuku");
+$dbstok = QuerySelect("SELECT stok_tersedia FROM books WHERE id_buku = $idbuku");
+if(empty($dbstok)){
+    $_SESSION['error'] = "Buku tidak ditemukan.";
+    header('Location: ../users/dashboard.php');
+    exit();
+}
 if($dbstok[0]['stok_tersedia'] == 0){
     $_SESSION['stokhabis'] = "stock habis";
     header('Location: ../users/dashboard.php');
@@ -20,7 +36,7 @@ if(isset($username) ){
     // CEK APAKAH USER SUDAH MEMINJAM BUKU INI DAN BELUM DIKEMBALIKAN
 $cekPeminjaman = QuerySelect("SELECT * FROM loans 
                               WHERE id_buku = $idbuku 
-                              AND id_user = '$id_users' 
+                              AND id_user = $id_users
                               AND status = 'dipinjam'");
 
     if(!empty($cekPeminjaman)) {

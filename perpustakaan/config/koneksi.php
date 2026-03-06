@@ -2,6 +2,7 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
+$id_users = (int)$_SESSION['id_user'] ?? null;
 $connect = mysqli_connect('localhost','root','','perpus');
 $querybuku="SELECT * FROM books LIMIT 3";
 $querydaftarbuku="SELECT * FROM books ";
@@ -11,7 +12,6 @@ $queryusers="SELECT * FROM users";
 $dbusers = mysqli_query($connect,$queryusers);
 $rowusers = mysqli_fetch_assoc($dbusers);
 
-$id_users = (int)$_SESSION['id_user'] ?? null;
 
 function QuerySelect($quer){
     global $connect;
@@ -44,8 +44,27 @@ LIMIT 3");
 //========================================= anggota =========================================
 
 $jumlahanggotaaktif = count(QuerySelect("SELECT * FROM users WHERE status = 'aktif'"));
-$bulan = date('Y-m-d',strtotime("-1 month"));
-$jumlahanggotabulanterakhir = count(QuerySelect("SELECT * FROM users WHERE $bulan < now()"));
+
+$jumlahanggotabulanterakhir = count(QuerySelect("SELECT * FROM users WHERE tanggal_daftar >= DATE_SUB(now(),INTERVAL 1 MONTH)"));
+
+
+
+// ======================================= Fines =============================================
+
+
+
+$dendauser = QuerySelect("SELECT b.*,l.*,f.jumlah_denda
+FROM fines AS f
+JOIN loans AS l ON f.id_pinjam = l.id_pinjam 
+INNER JOIN books AS b ON l.id_buku = b.id_buku
+WHERE l.id_user = $id_users 
+AND f.status_bayar = 'belum'");
+$totaldenda = QuerySelect("SELECT SUM(jumlah_denda) AS jumlahdenda FROM fines ")[0] ?? 0;
+$totaldendauser = QuerySelect("SELECT SUM(jumlah_denda) AS jumlahdenda FROM fines WHERE id_user = $id_users AND status_bayar = 'belum'")[0] ?? 0;
+$dendabelumdibayar = QuerySelect("SELECT SUM(jumlah_denda) AS jumlahdenda FROM fines WHERE status_bayar = 'belum'");
+$dendalunas = QuerySelect("SELECT SUM(jumlah_denda) AS jumlahdenda FROM fines  WHERE status_bayar = 'lunas'");
+
+
 
 // ======================================= loans =============================================
 // Query untuk mengambil buku yang sedang dipinjam oleh user ini

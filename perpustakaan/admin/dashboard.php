@@ -54,6 +54,7 @@ require '../config/koneksi.php';
                     <a href="dashboard.php" class="text-white text-sm border-b border-blue-500 pb-1">Dashboard</a>
                     <a href="kelola_buku.php" class="text-gray-400 hover:text-white text-sm transition">Kelola Buku</a>
                     <a href="kelola_anggota.php" class="text-gray-400 hover:text-white text-sm transition">Kelola Anggota</a>
+                    <a href="denda.php" class="text-gray-400 hover:text-white text-sm transition">Denda</a>
                     <a href="laporan.php" class="text-gray-400 hover:text-white text-sm transition">Laporan</a>
                 </div>
 
@@ -131,7 +132,7 @@ require '../config/koneksi.php';
                 <div class="flex items-center justify-between">
                     <div>
                         <p class="text-gray-400 text-sm">Peminjaman Terlambat</p>
-                        <p class="text-3xl font-bold text-red-400 mt-1">1<?= $totalpeminjamanterlambat ?>2</p>
+                        <p class="text-3xl font-bold text-red-400 mt-1"><?= $totalpeminjamanterlambat ?></p>
                     </div>
                     <div class="w-12 h-12 bg-red-600/20 rounded-lg flex items-center justify-center">
                         <svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">

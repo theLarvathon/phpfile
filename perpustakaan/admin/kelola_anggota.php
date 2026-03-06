@@ -60,6 +60,7 @@ if(isset($_POST['search'])){
                     <a href="dashboard.php" class="text-gray-400 hover:text-white text-sm transition">Dashboard</a>
                     <a href="kelola_buku.php" class="text-gray-400 hover:text-white text-sm transition">Kelola Buku</a>
                     <a href="kelola_anggota.php" class="text-white text-sm border-b border-blue-500 pb-1">Kelola Anggota</a>
+                       <a href="denda.php" class="text-gray-400 hover:text-white text-sm transition">Denda</a>
                     <a href="laporan.php" class="text-gray-400 hover:text-white text-sm transition">Laporan</a>
                 </div>
                 <div class="flex items-center space-x-3">
