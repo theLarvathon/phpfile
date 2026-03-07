@@ -141,7 +141,7 @@ if(isset($_POST['search'])){
 
         <!-- SEARCH & FILTER BAR -->
         <div class="bg-dark-200 rounded-xl border border-dark-300 p-4 mb-6">
-            <div class="flex flex-col md:flex-row gap-4">
+            <div class="flex flex-col md:flex-row gap-2">
                 <div class="flex-1 relative">
                     <form class="space-x-2 flex" action="" method="post">
 

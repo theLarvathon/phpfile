@@ -132,11 +132,20 @@ if(!isset($_SESSION['id_user'])) {
                         <div>
                             <label class="block text-sm text-gray-400 mb-1">Kategori</label>
                             <select name="kategori" class="w-full bg-dark-300 border border-dark-400 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-500 transition">
+                                <option value="Sejarah">Agama</option>
                                 <option value="Fiksi">Fiksi</option>
+                                <option value="Sejarah">Filsafat</option>
+                                <option value="Sejarah">Hukum</option>
+                                <option value="Sejarah">Kedokteran</option>
+                                <option value="Sejarah">Keuangan</option>
                                 <option value="Nonfiksi">Nonfiksi</option>
-                                <option value="Teknologi">Teknologi</option>
+                                <option value="Sejarah">Olahraga</option>
+                                <option value="Sejarah">Pendidikan</option>
+                                <option value="Sejarah">Psikologi</option>
+                                <option value="Sejarah">Sains</option>
                                 <option value="Sejarah">Sejarah</option>
-                                <option value="Lainnya">Lainnya</option>
+                                <option value="Sejarah">Seni</option>
+                                <option value="Teknologi">Teknologi</option>
                             </select>
                         </div>
                         <div>

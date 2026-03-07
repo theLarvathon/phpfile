@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 require '../config/koneksi.php';
 // if(!isset($_SESSION['user_id']) || $_SESSION['role'] != 'admin') {
 //     header('Location: ../public/login.php');
@@ -88,7 +90,7 @@ require '../config/koneksi.php';
                 <div class="flex items-start justify-between">
                     <div>
                         <p class="text-gray-400 text-sm">Total Denda</p>
-                        <p class="text-3xl font-bold text-blue-400 mt-1">Rp <?= $totaldenda['jumlahdenda'] ?></p>
+                        <p class="text-3xl font-bold text-blue-400 mt-1">Rp <?= $totaldenda['jumlahdenda'] ?>k</p>
                         <p class="text-xs text-green-400 mt-2">↑ 8% dari bulan lalu</p>
                     </div>
                     <div class="w-12 h-12 bg-blue-600/20 rounded-lg flex items-center justify-center">
@@ -102,7 +104,7 @@ require '../config/koneksi.php';
                 <div class="flex items-start justify-between">
                     <div>
                         <p class="text-gray-400 text-sm">Denda Belum Dibayar</p>
-                        <p class="text-3xl font-bold text-yellow-400 mt-1">Rp 890.000</p>
+                        <p class="text-3xl font-bold text-yellow-400 mt-1">Rp<?= $dendabelumdibayar['jumlahdenda'] ?>k</p>
                         <p class="text-xs text-red-400 mt-2">↑ 12% dari bulan lalu</p>
                     </div>
                     <div class="w-12 h-12 bg-yellow-600/20 rounded-lg flex items-center justify-center">
@@ -116,7 +118,7 @@ require '../config/koneksi.php';
                 <div class="flex items-start justify-between">
                     <div>
                         <p class="text-gray-400 text-sm">Denda Lunas</p>
-                        <p class="text-3xl font-bold text-green-400 mt-1">Rp 1.560.000</p>
+                        <p class="text-3xl font-bold text-green-400 mt-1">Rp <?= $dendalunas['jumlahdenda'] ?>k</p>
                         <p class="text-xs text-green-400 mt-2">↑ 5% dari bulan lalu</p>
                     </div>
                     <div class="w-12 h-12 bg-green-600/20 rounded-lg flex items-center justify-center">
@@ -130,7 +132,7 @@ require '../config/koneksi.php';
                 <div class="flex items-start justify-between">
                     <div>
                         <p class="text-gray-400 text-sm">Anggota dengan Denda</p>
-                        <p class="text-3xl font-bold text-purple-400 mt-1">24 orang</p>
+                        <p class="text-3xl font-bold text-purple-400 mt-1"><?= $userdenda ?> orang</p>
                         <p class="text-xs text-green-400 mt-2">Aktif</p>
                     </div>
                     <div class="w-12 h-12 bg-purple-600/20 rounded-lg flex items-center justify-center">
@@ -173,7 +175,6 @@ require '../config/koneksi.php';
                 <table class="w-full text-sm">
                     <thead class="bg-dark-300 text-gray-300">
                         <tr>
-                            <th class="text-left py-3 px-4">ID</th>
                             <th class="text-left py-3 px-4">Anggota</th>
                             <th class="text-left py-3 px-4">Buku</th>
                             <th class="text-left py-3 px-4">Tgl Pinjam</th>
@@ -184,91 +185,32 @@ require '../config/koneksi.php';
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-dark-300">
+                        <?php foreach($dbpaginationdendauser as $row){?>
                         <tr class="hover:bg-dark-300/50 transition">
-                            <td class="py-3 px-4 font-mono text-xs text-blue-400">#D001</td>
                             <td class="py-3 px-4">
                                 <div>
-                                    <p class="font-medium">Raden Adjeng</p>
+                                    <p class="font-medium"><?= $row['username'] ?></p>
                                     <p class="text-xs text-gray-500">AGT-001</p>
                                 </div>
                             </td>
-                            <td class="py-3 px-4">Atomic Habits</td>
-                            <td class="py-3 px-4">10 Feb 2025</td>
-                            <td class="py-3 px-4">5 hari</td>
-                            <td class="py-3 px-4 text-yellow-400">Rp 25.000</td>
-                            <td class="py-3 px-4"><span class="bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded-full text-xs">Belum</span></td>
+                            <td class="py-3 px-4"><?= $row['judul'] ?></td>
+                            <td class="py-3 px-4"><?= $row['tanggal_pinjam'] ?></td>
+                            <td class="py-3 px-4"><?= $row['hari_terlambat'] ?>hari</td>
+                            <td class="py-3 px-4 text-yellow-400">Rp <?= $row['jumlah_denda'] ?>k</td>
+                            <td class="py-3 px-4">
+                                <?php
+                            if($row['status_bayar'] == 'lunas'){
+                                echo '<span class="bg-green-500/20 text-green-400 px-2 py-1 rounded-full text-xs">Lunas</span>';
+                            }else{
+                                 echo '<span class="bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded-full text-xs">Belum</span>';
+                            }
+                            
+                            ?></td>
                             <td class="py-3 px-4">
                                 <button class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded-lg text-xs font-medium transition">Konfirmasi</button>
                             </td>
                         </tr>
-                        <tr class="hover:bg-dark-300/50 transition">
-                            <td class="py-3 px-4 font-mono text-xs text-blue-400">#D002</td>
-                            <td class="py-3 px-4">
-                                <div>
-                                    <p class="font-medium">Soekarno</p>
-                                    <p class="text-xs text-gray-500">AGT-045</p>
-                                </div>
-                            </td>
-                            <td class="py-3 px-4">Sapiens</td>
-                            <td class="py-3 px-4">1 Feb 2025</td>
-                            <td class="py-3 px-4">4 hari</td>
-                            <td class="py-3 px-4 text-yellow-400">Rp 20.000</td>
-                            <td class="py-3 px-4"><span class="bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded-full text-xs">Belum</span></td>
-                            <td class="py-3 px-4">
-                                <button class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded-lg text-xs font-medium transition">Konfirmasi</button>
-                            </td>
-                        </tr>
-                        <tr class="hover:bg-dark-300/50 transition">
-                            <td class="py-3 px-4 font-mono text-xs text-blue-400">#D003</td>
-                            <td class="py-3 px-4">
-                                <div>
-                                    <p class="font-medium">Cut Nyak</p>
-                                    <p class="text-xs text-gray-500">AGT-089</p>
-                                </div>
-                            </td>
-                            <td class="py-3 px-4">The Psychology of Money</td>
-                            <td class="py-3 px-4">5 Feb 2025</td>
-                            <td class="py-3 px-4">2 hari</td>
-                            <td class="py-3 px-4 text-gray-400 line-through">Rp 10.000</td>
-                            <td class="py-3 px-4"><span class="bg-green-500/20 text-green-400 px-2 py-1 rounded-full text-xs">Lunas</span></td>
-                            <td class="py-3 px-4">
-                                <span class="text-gray-600 text-xs">-</span>
-                            </td>
-                        </tr>
-                        <tr class="hover:bg-dark-300/50 transition">
-                            <td class="py-3 px-4 font-mono text-xs text-blue-400">#D004</td>
-                            <td class="py-3 px-4">
-                                <div>
-                                    <p class="font-medium">Dipa Nusantara</p>
-                                    <p class="text-xs text-gray-500">AGT-112</p>
-                                </div>
-                            </td>
-                            <td class="py-3 px-4">Clean Code</td>
-                            <td class="py-3 px-4">8 Feb 2025</td>
-                            <td class="py-3 px-4">1 hari</td>
-                            <td class="py-3 px-4 text-gray-400 line-through">Rp 5.000</td>
-                            <td class="py-3 px-4"><span class="bg-green-500/20 text-green-400 px-2 py-1 rounded-full text-xs">Lunas</span></td>
-                            <td class="py-3 px-4">
-                                <span class="text-gray-600 text-xs">-</span>
-                            </td>
-                        </tr>
-                        <tr class="hover:bg-dark-300/50 transition">
-                            <td class="py-3 px-4 font-mono text-xs text-blue-400">#D005</td>
-                            <td class="py-3 px-4">
-                                <div>
-                                    <p class="font-medium">Ki Hajar</p>
-                                    <p class="text-xs text-gray-500">AGT-067</p>
-                                </div>
-                            </td>
-                            <td class="py-3 px-4">Filosofi Teras</td>
-                            <td class="py-3 px-4">12 Feb 2025</td>
-                            <td class="py-3 px-4">3 hari</td>
-                            <td class="py-3 px-4 text-yellow-400">Rp 15.000</td>
-                            <td class="py-3 px-4"><span class="bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded-full text-xs">Belum</span></td>
-                            <td class="py-3 px-4">
-                                <button class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded-lg text-xs font-medium transition">Konfirmasi</button>
-                            </td>
-                        </tr>
+                        <?php }?>
                     </tbody>
                 </table>
             </div>
@@ -278,10 +220,19 @@ require '../config/koneksi.php';
         <div class="flex items-center justify-between">
             <p class="text-gray-400 text-sm">Menampilkan 1-5 dari 24 data</p>
             <div class="flex gap-2">
-                <span class="w-8 h-8 flex items-center justify-center bg-blue-600 text-white rounded-lg text-sm font-medium">1</span>
-                <span class="w-8 h-8 flex items-center justify-center bg-dark-200 hover:bg-dark-300 border border-dark-300 rounded-lg text-gray-400 text-sm cursor-pointer transition">2</span>
-                <span class="w-8 h-8 flex items-center justify-center bg-dark-200 hover:bg-dark-300 border border-dark-300 rounded-lg text-gray-400 text-sm cursor-pointer transition">3</span>
-                <span class="w-8 h-8 flex items-center justify-center bg-dark-200 hover:bg-dark-300 border border-dark-300 rounded-lg text-gray-400 text-sm cursor-pointer transition">4</span>
+                <?php if($pageaktif > 1){?>
+                    <a class="w-8 h-8 flex items-center justify-center bg-dark-200 rounded-lg text-gray-400 hover:bg-dark-300 transition cursor-default"href="?halaman=<?= $pageaktif - 1 ?>">&laquo;</a>
+                    <?php }?>
+                    <?php for($i=1;$i<=$jumlahpage; $i++){?>
+                    <?php if($pageaktif == $i){?>
+                    <a class="w-8 h-8 flex items-center justify-center bg-dark-300 rounded-lg text-blue-400 border border-blue-500/30" href="?halaman=<?= $i ?>"><?= $i ?></a>
+                    <?php }else{?>
+                    <a class="w-8 h-8 flex items-center justify-center bg-dark-200 rounded-lg text-gray-400 hover:bg-dark-300 transition cursor-default"href="?halaman=<?= $i ?>" ><?= $i ?></a>
+                    <?php }?>
+                    <?php }?>
+                    <?php if($pageaktif < $jumlahpage){?>
+                    <a class="w-8 h-8 flex items-center justify-center bg-dark-200 rounded-lg text-gray-400 hover:bg-dark-300 transition cursor-default"href="?halaman=<?= $pageaktif + 1 ?>">&raquo;</a>
+                    <?php }?>
             </div>
         </div>
 

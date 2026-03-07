@@ -104,15 +104,8 @@ require '../config/koneksi.php';
                             </div>
                             <div class="mt-2">
                                 <span class="bg-red-500/20 text-red-400 px-2 py-0.5 rounded-full text-xs">Terlambat 
-                                    <?php 
-                                        $tgl_kembali = new DateTime($row['tanggal_kembali']);
-                                        $tgl_tenggat = new DateTime($row['tanggal_tenggat']);
-        
-                                        // Menghitung selisih
-                                        $selisih = $tgl_tenggat->diff($tgl_kembali);
-        
-                                        // Tampilkan jumlah hari (format %r agar minus jika belum telat, atau %a untuk angka mutlak)
-                                        echo $selisih->days; 
+                                    <?=  
+                                        $selisihtanggal; 
                                     ?> hari
                                 </span>
 

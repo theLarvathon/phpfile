@@ -158,7 +158,7 @@ require '../config/koneksi.php';
                 <div class="flex items-start justify-between">
                     <div>
                         <p class="text-gray-400 text-sm">Total Denda</p>
-                        <p class="text-3xl font-bold text-yellow-400 mt-1">Rp 245k</p>
+                        <p class="text-3xl font-bold text-yellow-400 mt-1">Rp <?= $totaldenda['jumlahdenda'] ?>k</p>
                         <p class="text-xs text-red-400 mt-2">↑ 3% dari bulan lalu</p>
                     </div>
                     <div class="w-12 h-12 bg-yellow-600/20 rounded-lg flex items-center justify-center">
@@ -296,56 +296,29 @@ require '../config/koneksi.php';
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-dark-300">
+                        <?php $i = 1?>
+                        <?php foreach($dbpeminjamanterbarulaporan as $row){?>
                         <tr class="hover:bg-dark-300/50 transition">
-                            <td class="py-3 px-4">1</td>
-                            <td class="py-3 px-4 font-mono text-xs text-blue-400">PJ001</td>
-                            <td class="py-3 px-4">Raden Adjeng Kartini</td>
-                            <td class="py-3 px-4">Filosofi Teras</td>
-                            <td class="py-3 px-4">15 Feb 2025</td>
-                            <td class="py-3 px-4">-</td>
-                            <td class="py-3 px-4"><span class="bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded-full text-xs">Dipinjam</span></td>
-                            <td class="py-3 px-4">-</td>
+                            <td class="py-3 px-4"><?= $i ?></td>
+                            <td class="py-3 px-4 font-mono text-xs text-blue-400"><?= $row['id_pinjam'] ?></td>
+                            <td class="py-3 px-4"><?= $row['username'] ?></td>
+                            <td class="py-3 px-4"><?= $row['judul'] ?></td>
+                            <td class="py-3 px-4"><?= $row['tanggal_pinjam'] ?></td>
+                            <td class="py-3 px-4"><?= $row['tanggal_kembali'] ?></td>
+                            <td class="py-3 px-4">  <?php
+                            if($row['status'] == 'dikembalikan'){
+                                echo '<span class="bg-green-500/20 text-green-400 px-2 py-1 rounded-full text-xs">Dikembalikan</span>';
+                            }elseif($row['status'] == 'dipinjam'){
+                                 echo '<span class="bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded-full text-xs">Dipinjam</span>';
+                            }elseif ($row['status'] == 'terlambat') {
+                                echo '<span class="bg-red-500/20 text-red-400 px-2 py-1 rounded-full text-xs">Terlambat</span>';
+                            }
+                            
+                            ?></td>
+                            <td class="py-3 px-4 text-yellow-400">Rp <?= $row['jumlah_denda'] ?> k</td>
                         </tr>
-                        <tr class="hover:bg-dark-300/50 transition">
-                            <td class="py-3 px-4">2</td>
-                            <td class="py-3 px-4 font-mono text-xs text-blue-400">PJ002</td>
-                            <td class="py-3 px-4">Mohammad Hatta</td>
-                            <td class="py-3 px-4">Atomic Habits</td>
-                            <td class="py-3 px-4">14 Feb 2025</td>
-                            <td class="py-3 px-4">21 Feb 2025</td>
-                            <td class="py-3 px-4"><span class="bg-green-500/20 text-green-400 px-2 py-1 rounded-full text-xs">Tepat Waktu</span></td>
-                            <td class="py-3 px-4">-</td>
-                        </tr>
-                        <tr class="hover:bg-dark-300/50 transition">
-                            <td class="py-3 px-4">3</td>
-                            <td class="py-3 px-4 font-mono text-xs text-blue-400">PJ003</td>
-                            <td class="py-3 px-4">Cut Nyak Dien</td>
-                            <td class="py-3 px-4">Sapiens</td>
-                            <td class="py-3 px-4">10 Feb 2025</td>
-                            <td class="py-3 px-4">-</td>
-                            <td class="py-3 px-4"><span class="bg-red-500/20 text-red-400 px-2 py-1 rounded-full text-xs">Terlambat</span></td>
-                            <td class="py-3 px-4 text-yellow-400">Rp 5.000</td>
-                        </tr>
-                        <tr class="hover:bg-dark-300/50 transition">
-                            <td class="py-3 px-4">4</td>
-                            <td class="py-3 px-4 font-mono text-xs text-blue-400">PJ004</td>
-                            <td class="py-3 px-4">Ki Hajar Dewantara</td>
-                            <td class="py-3 px-4">Clean Code</td>
-                            <td class="py-3 px-4">08 Feb 2025</td>
-                            <td class="py-3 px-4">15 Feb 2025</td>
-                            <td class="py-3 px-4"><span class="bg-green-500/20 text-green-400 px-2 py-1 rounded-full text-xs">Tepat Waktu</span></td>
-                            <td class="py-3 px-4">-</td>
-                        </tr>
-                        <tr class="hover:bg-dark-300/50 transition">
-                            <td class="py-3 px-4">5</td>
-                            <td class="py-3 px-4 font-mono text-xs text-blue-400">PJ005</td>
-                            <td class="py-3 px-4">Dewi Sartika</td>
-                            <td class="py-3 px-4">The Pragmatic Programmer</td>
-                            <td class="py-3 px-4">05 Feb 2025</td>
-                            <td class="py-3 px-4">12 Feb 2025</td>
-                            <td class="py-3 px-4"><span class="bg-green-500/20 text-green-400 px-2 py-1 rounded-full text-xs">Tepat Waktu</span></td>
-                            <td class="py-3 px-4">-</td>
-                        </tr>
+                        <?php $i++?>
+                        <?php }?>
                     </tbody>
                 </table>
             </div>
