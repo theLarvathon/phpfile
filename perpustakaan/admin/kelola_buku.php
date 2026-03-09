@@ -13,7 +13,10 @@ $dbpaginationbuku = QuerySelect("SELECT * FROM books LIMIT $indexpertama,$datape
 if(isset($_POST['search'])){
     $dbpaginationbuku = Searchbuku($_POST['keyword']);
 }
+// ============================================ SESSSION untuk alert ==================================================
 
+$succes = $_SESSION['succes'] ??null;
+$error = $_SESSION['error'] ??null;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -138,7 +141,7 @@ if(isset($_POST['search'])){
                     <tbody class="divide-y divide-dark-300">
                         <?php foreach($dbpaginationbuku as $row):?>
                             <tr class="hover:bg-dark-300/50 transition">
-                                <td class="py-3 px-4 font-mono text-xs"><?= 'bk'.$row['id_buku'] ?></td>
+                                <td class="py-3 px-4 font-mono text-xs"><?= $row['id_buku'] ?></td>
                                 <td class="py-3 px-4">
                                     <div class="w-8 h-10 bg-dark-400 rounded flex items-center justify-center text-sm">📘</div>
                                 </td>
@@ -162,7 +165,7 @@ if(isset($_POST['search'])){
                             </td>
                             <td class="py-3 px-4">
                                 <div class="flex space-x-2">
-                                    <a href="edit_buku.php?id=BK001" class="p-1.5 bg-blue-600/20 text-blue-400 rounded-lg hover:bg-blue-600/30 transition">
+                                    <a href="edit_buku.php?id=<?= $row['id_buku'] ?>" class="p-1.5 bg-blue-600/20 text-blue-400 rounded-lg hover:bg-blue-600/30 transition">
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linecap="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
                                         </svg>
@@ -213,6 +216,20 @@ if(isset($_POST['search'])){
             <p class="text-gray-500 text-xs text-center">© 2025 Syafik · Digital Library. Admin Panel.</p>
         </div>
     </footer>
+
+    <script>
+         <?php if ($error): ?>
+            alert("<?php echo $error; ?>");
+        <?php endif; ?>
+        <?php if ($succes): ?>
+            alert("<?php echo $succes; ?>");
+        <?php endif; ?>
+    </script>
+    <?php unset(
+        $_SESSION['succes'],
+        $_SESSION['error']
+    )
+    ?>
 
 </body>
 </html>

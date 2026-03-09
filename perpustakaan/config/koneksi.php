@@ -47,12 +47,12 @@ LEFT JOIN fines AS f ON l.id_pinjam = f.id_pinjam
 ORDER BY l.id_pinjam DESC 
 LIMIT 5");
 
-//========================================= anggota =========================================
+//========================================================== anggota ==============================================================
 
 $jumlahanggotaaktif = count(QuerySelect("SELECT * FROM users WHERE status = 'aktif'"));
 
 $jumlahanggotabulanterakhir = count(QuerySelect("SELECT * FROM users WHERE tanggal_daftar >= DATE_SUB(now(),INTERVAL 1 MONTH)"));
-// ======================================= Fines =============================================
+// ======================================================== Fines ===================================================================
 
 $dendauser = QuerySelect("SELECT b.*,l.*,f.jumlah_denda
 FROM fines AS f
@@ -65,8 +65,12 @@ $totaldendauser = QuerySelect("SELECT SUM(jumlah_denda) AS jumlahdenda FROM fine
 $dendabelumdibayar = QuerySelect("SELECT COALESCE(SUM(jumlah_denda),0) AS jumlahdenda FROM fines WHERE status_bayar = 'belum'")[0] ?? 0;
 $dendalunas = QuerySelect("SELECT SUM(jumlah_denda) AS jumlahdenda FROM fines  WHERE status_bayar = 'lunas'")[0]??0;
 $userdenda = count(QuerySelect("SELECT id_user FROM fines  WHERE status_bayar = 'belum'"));
-
-// ======================================= loans =============================================
+//==== laporan ====
+$dbanggotadendaterbanyak = QuerySelect("SELECT u.username, SUM(f.jumlah_denda) AS jumlah_denda 
+FROM fines AS f 
+JOIN users AS u ON f.id_user = u.id_user 
+ORDER BY jumlah_denda DESC LIMIT 5 ");
+// =========================================================== loans =============================================================
 
 // Query untuk mengambil buku yang sedang dipinjam oleh user ini
 $queryds = "SELECT b.*, l.tanggal_pinjam, l.tanggal_tenggat, l.status 
@@ -88,17 +92,32 @@ $bukupeminjamansy = QuerySelect($querysy);
 $bukuds = QuerySelect($queryds);
 
 $sedangdipinjamuser = count(QuerySelect("SELECT id_buku FROM loans WHERE id_user = $id_users AND status = 'dipinjam'"));
+$peminjamanterbaruUser = QuerySelect("SELECT l.tanggal_pinjam,l.tanggal_kembali,l.id_buku,b.judul FROM loans AS l 
+JOIN books AS b ON l.id_buku = b.id_buku
+WHERE id_user = $id_users AND status = 'dipinjam' 
+ORDER BY id_buku DESC 
+LIMIT 3");
 $sedangminjam = count(QuerySelect("SELECT DISTINCT id_user FROM loans "));
 $totalpinjam = count(QuerySelect("SELECT * FROM loans "));
 $totalpeminjamanaktif = count(QuerySelect("SELECT * FROM loans WHERE status = 'dipinjam' "));
 $totalpeminjamanterlambat = count(QuerySelect("SELECT * FROM loans WHERE status = 'terlambat' "));
 $bukudipinjam = count(QuerySelect("SELECT DISTINCT id_buku FROM loans"));
 $bukudikembalikan = count(QuerySelect("SELECT DISTINCT id_buku FROM loans WHERE status = 'dikembalikan'"));
+//==== laporan ====
+$dbbukupalingpopuler = QuerySelect("SELECT b.judul, COUNT(l.id_buku) AS buku 
+FROM loans AS l 
+JOIN books AS b ON l.id_buku = b.id_buku
+GROUP BY b.judul
+ORDER BY buku DESC LIMIT 5");
+$dbanggotapalingpopuler = QuerySelect("SELECT u.username,COUNT(l.id_user) AS user_pinjam
+FROM loans AS l
+JOIN users AS u ON l.id_user = u.id_user
+GROUP BY u.username
+ORDER BY user_pinjam DESC LIMIT 5");
 
-
-// ======================================= pagination buku =============================================
+// ========================================== pagination buku ===============================================
 $jumlahbuku = count(QuerySelect("SELECT * FROM books"));
-$dataperpage = 5;
+$dataperpage = 10;
 $jumlahpage = ceil($jumlahbuku/$dataperpage);
 $pageaktif = (isset($_GET['halaman'])) ? $_GET['halaman'] : 1;
 $indexpertama = ($dataperpage*$pageaktif)-$dataperpage;
@@ -127,3 +146,14 @@ INNER JOIN loans AS l ON f.id_pinjam = l.id_pinjam
 INNER JOIN books AS b ON l.id_buku = b.id_buku
 INNER JOIN users AS u ON f.id_user = u.id_user
 ORDER BY f.id_denda DESC  LIMIT $indexpertamaDenda,$dataperpage"); 
+
+// ================================================================= KATEGORI ==================================================================
+
+$jumlahbukupinjam = count(QuerySelect("SELECT id_buku FROM loans "));
+$jumlahbukuperkategori = QuerySelect("SELECT b.kategori,
+COUNT(l.id_buku) AS id_buku, 
+FLOOR(COUNT(l.id_buku)/(SELECT COUNT(id_buku) FROM loans)*100) AS persenan
+FROM loans AS l
+JOIN books AS b ON l.id_buku = b.id_buku
+GROUP BY b.kategori
+ORDER BY id_buku DESC LIMIT 4;");

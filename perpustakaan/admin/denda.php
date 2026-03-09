@@ -91,7 +91,7 @@ require '../config/koneksi.php';
                     <div>
                         <p class="text-gray-400 text-sm">Total Denda</p>
                         <p class="text-3xl font-bold text-blue-400 mt-1">Rp <?= $totaldenda['jumlahdenda'] ?>k</p>
-                        <p class="text-xs text-green-400 mt-2">↑ 8% dari bulan lalu</p>
+                     
                     </div>
                     <div class="w-12 h-12 bg-blue-600/20 rounded-lg flex items-center justify-center">
                         <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -105,7 +105,6 @@ require '../config/koneksi.php';
                     <div>
                         <p class="text-gray-400 text-sm">Denda Belum Dibayar</p>
                         <p class="text-3xl font-bold text-yellow-400 mt-1">Rp<?= $dendabelumdibayar['jumlahdenda'] ?>k</p>
-                        <p class="text-xs text-red-400 mt-2">↑ 12% dari bulan lalu</p>
                     </div>
                     <div class="w-12 h-12 bg-yellow-600/20 rounded-lg flex items-center justify-center">
                         <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -119,7 +118,6 @@ require '../config/koneksi.php';
                     <div>
                         <p class="text-gray-400 text-sm">Denda Lunas</p>
                         <p class="text-3xl font-bold text-green-400 mt-1">Rp <?= $dendalunas['jumlahdenda'] ?>k</p>
-                        <p class="text-xs text-green-400 mt-2">↑ 5% dari bulan lalu</p>
                     </div>
                     <div class="w-12 h-12 bg-green-600/20 rounded-lg flex items-center justify-center">
                         <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -190,7 +188,6 @@ require '../config/koneksi.php';
                             <td class="py-3 px-4">
                                 <div>
                                     <p class="font-medium"><?= $row['username'] ?></p>
-                                    <p class="text-xs text-gray-500">AGT-001</p>
                                 </div>
                             </td>
                             <td class="py-3 px-4"><?= $row['judul'] ?></td>
@@ -235,87 +232,6 @@ require '../config/koneksi.php';
                     <?php }?>
             </div>
         </div>
-
-        <!-- GRAFIK SEDERHANA -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-12">
-            <!-- Denda per Bulan -->
-            <div class="bg-dark-200 rounded-xl border border-dark-300 p-5">
-                <h2 class="text-lg font-semibold mb-4 flex items-center">
-                    <span class="w-1 h-5 bg-blue-500 rounded-full mr-3"></span>
-                    Tren Denda per Bulan
-                </h2>
-                <div class="h-40 flex items-end justify-between gap-2">
-                    <div class="flex flex-col items-center w-full">
-                        <div class="w-full bg-blue-500/80 rounded-t" style="height: 80px"></div>
-                        <span class="text-xs text-gray-400 mt-2">Jan</span>
-                    </div>
-                    <div class="flex flex-col items-center w-full">
-                        <div class="w-full bg-blue-500/80 rounded-t" style="height: 95px"></div>
-                        <span class="text-xs text-gray-400 mt-2">Feb</span>
-                    </div>
-                    <div class="flex flex-col items-center w-full">
-                        <div class="w-full bg-blue-500/80 rounded-t" style="height: 65px"></div>
-                        <span class="text-xs text-gray-400 mt-2">Mar</span>
-                    </div>
-                    <div class="flex flex-col items-center w-full">
-                        <div class="w-full bg-blue-500/80 rounded-t" style="height: 70px"></div>
-                        <span class="text-xs text-gray-400 mt-2">Apr</span>
-                    </div>
-                    <div class="flex flex-col items-center w-full">
-                        <div class="w-full bg-blue-500/80 rounded-t" style="height: 55px"></div>
-                        <span class="text-xs text-gray-400 mt-2">Mei</span>
-                    </div>
-                    <div class="flex flex-col items-center w-full">
-                        <div class="w-full bg-blue-500/80 rounded-t" style="height: 45px"></div>
-                        <span class="text-xs text-gray-400 mt-2">Jun</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Top 5 Anggota dengan Denda Terbanyak -->
-            <div class="bg-dark-200 rounded-xl border border-dark-300 p-5">
-                <h2 class="text-lg font-semibold mb-4 flex items-center">
-                    <span class="w-1 h-5 bg-purple-500 rounded-full mr-3"></span>
-                    Top 5 Anggota dengan Denda Terbanyak
-                </h2>
-                <div class="space-y-3">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-3">
-                            <span class="text-sm text-gray-400 w-6">#1</span>
-                            <span class="font-medium">Raden Adjeng</span>
-                        </div>
-                        <span class="text-sm text-yellow-400">Rp 45.000</span>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-3">
-                            <span class="text-sm text-gray-400 w-6">#2</span>
-                            <span class="font-medium">Soekarno</span>
-                        </div>
-                        <span class="text-sm text-yellow-400">Rp 38.000</span>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-3">
-                            <span class="text-sm text-gray-400 w-6">#3</span>
-                            <span class="font-medium">Ki Hajar</span>
-                        </div>
-                        <span class="text-sm text-yellow-400">Rp 32.000</span>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-3">
-                            <span class="text-sm text-gray-400 w-6">#4</span>
-                            <span class="font-medium">Cut Nyak</span>
-                        </div>
-                        <span class="text-sm text-yellow-400">Rp 28.000</span>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-3">
-                            <span class="text-sm text-gray-400 w-6">#5</span>
-                            <span class="font-medium">Dipa Nusantara</span>
-                        </div>
-                        <span class="text-sm text-yellow-400">Rp 25.000</span>
-                    </div>
-                </div>
-            </div>
         </div>
     </main>
 

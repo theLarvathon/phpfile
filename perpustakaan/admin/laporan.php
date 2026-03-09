@@ -117,7 +117,6 @@ require '../config/koneksi.php';
                     <div>
                         <p class="text-gray-400 text-sm">Total Peminjaman</p>
                         <p class="text-3xl font-bold text-blue-400 mt-1"><?= $totalpinjam  ?></p>
-                        <p class="text-xs text-green-400 mt-2">↑ 12% dari bulan lalu</p>
                     </div>
                     <div class="w-12 h-12 bg-blue-600/20 rounded-lg flex items-center justify-center">
                         <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -131,7 +130,7 @@ require '../config/koneksi.php';
                     <div>
                         <p class="text-gray-400 text-sm">Buku Dipinjam</p>
                         <p class="text-3xl font-bold text-purple-400 mt-1"><?= $bukudipinjam ?></p>
-                        <p class="text-xs text-green-400 mt-2">↑ 5% dari bulan lalu</p>
+                    
                     </div>
                     <div class="w-12 h-12 bg-purple-600/20 rounded-lg flex items-center justify-center">
                         <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -145,7 +144,7 @@ require '../config/koneksi.php';
                     <div>
                         <p class="text-gray-400 text-sm">Buku Kembali</p>
                         <p class="text-3xl font-bold text-green-400 mt-1"><?= $bukudikembalikan ?></p>
-                        <p class="text-xs text-green-400 mt-2">↑ 8% dari bulan lalu</p>
+                    
                     </div>
                     <div class="w-12 h-12 bg-green-600/20 rounded-lg flex items-center justify-center">
                         <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -159,115 +158,11 @@ require '../config/koneksi.php';
                     <div>
                         <p class="text-gray-400 text-sm">Total Denda</p>
                         <p class="text-3xl font-bold text-yellow-400 mt-1">Rp <?= $totaldenda['jumlahdenda'] ?>k</p>
-                        <p class="text-xs text-red-400 mt-2">↑ 3% dari bulan lalu</p>
                     </div>
                     <div class="w-12 h-12 bg-yellow-600/20 rounded-lg flex items-center justify-center">
                         <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linecap="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- GRAFIK DAN CHART -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-            <!-- Grafik Peminjaman per Hari -->
-            <div class="bg-dark-200 rounded-xl border border-dark-300 p-5">
-                <h2 class="text-lg font-semibold mb-4 flex items-center">
-                    <span class="w-1 h-5 bg-blue-500 rounded-full mr-3"></span>
-                    Peminjaman per Hari (Feb 2025)
-                </h2>
-                <div class="h-48 flex items-end justify-between gap-1">
-                    <!-- Bar chart -->
-                    <div class="w-full flex items-end justify-around">
-                        <div class="flex flex-col items-center w-8">
-                            <div class="w-6 bg-blue-500/80 rounded-t" style="height: 60px"></div>
-                            <span class="text-xs text-gray-400 mt-2">1</span>
-                        </div>
-                        <div class="flex flex-col items-center w-8">
-                            <div class="w-6 bg-blue-500/80 rounded-t" style="height: 75px"></div>
-                            <span class="text-xs text-gray-400 mt-2">2</span>
-                        </div>
-                        <div class="flex flex-col items-center w-8">
-                            <div class="w-6 bg-blue-500/80 rounded-t" style="height: 45px"></div>
-                            <span class="text-xs text-gray-400 mt-2">3</span>
-                        </div>
-                        <div class="flex flex-col items-center w-8">
-                            <div class="w-6 bg-blue-500/80 rounded-t" style="height: 90px"></div>
-                            <span class="text-xs text-gray-400 mt-2">4</span>
-                        </div>
-                        <div class="flex flex-col items-center w-8">
-                            <div class="w-6 bg-blue-500/80 rounded-t" style="height: 70px"></div>
-                            <span class="text-xs text-gray-400 mt-2">5</span>
-                        </div>
-                        <div class="flex flex-col items-center w-8">
-                            <div class="w-6 bg-blue-500/80 rounded-t" style="height: 85px"></div>
-                            <span class="text-xs text-gray-400 mt-2">6</span>
-                        </div>
-                        <div class="flex flex-col items-center w-8">
-                            <div class="w-6 bg-blue-500/80 rounded-t" style="height: 55px"></div>
-                            <span class="text-xs text-gray-400 mt-2">7</span>
-                        </div>
-                        <div class="flex flex-col items-center w-8">
-                            <div class="w-6 bg-blue-500/80 rounded-t" style="height: 95px"></div>
-                            <span class="text-xs text-gray-400 mt-2">8</span>
-                        </div>
-                        <div class="flex flex-col items-center w-8">
-                            <div class="w-6 bg-blue-500/80 rounded-t" style="height: 65px"></div>
-                            <span class="text-xs text-gray-400 mt-2">9</span>
-                        </div>
-                        <div class="flex flex-col items-center w-8">
-                            <div class="w-6 bg-blue-500/80 rounded-t" style="height: 80px"></div>
-                            <span class="text-xs text-gray-400 mt-2">10</span>
-                        </div>
-                    </div>
-                </div>
-                <p class="text-xs text-gray-500 text-center mt-4">Tanggal (1-10 Feb 2025)</p>
-            </div>
-
-            <!-- Kategori Buku Terpopuler -->
-            <div class="bg-dark-200 rounded-xl border border-dark-300 p-5">
-                <h2 class="text-lg font-semibold mb-4 flex items-center">
-                    <span class="w-1 h-5 bg-purple-500 rounded-full mr-3"></span>
-                    Kategori Terpopuler
-                </h2>
-                <div class="space-y-3">
-                    <div>
-                        <div class="flex justify-between text-sm mb-1">
-                            <span class="text-gray-300">Teknologi</span>
-                            <span class="text-blue-400">45%</span>
-                        </div>
-                        <div class="w-full bg-dark-400 rounded-full h-2">
-                            <div class="bg-blue-500 h-2 rounded-full" style="width: 45%"></div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="flex justify-between text-sm mb-1">
-                            <span class="text-gray-300">Fiksi</span>
-                            <span class="text-purple-400">28%</span>
-                        </div>
-                        <div class="w-full bg-dark-400 rounded-full h-2">
-                            <div class="bg-purple-500 h-2 rounded-full" style="width: 28%"></div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="flex justify-between text-sm mb-1">
-                            <span class="text-gray-300">Nonfiksi</span>
-                            <span class="text-green-400">18%</span>
-                        </div>
-                        <div class="w-full bg-dark-400 rounded-full h-2">
-                            <div class="bg-green-500 h-2 rounded-full" style="width: 18%"></div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="flex justify-between text-sm mb-1">
-                            <span class="text-gray-300">Sejarah</span>
-                            <span class="text-yellow-400">9%</span>
-                        </div>
-                        <div class="w-full bg-dark-400 rounded-full h-2">
-                            <div class="bg-yellow-500 h-2 rounded-full" style="width: 9%"></div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -324,6 +219,53 @@ require '../config/koneksi.php';
             </div>
         </div>
 
+
+        <!-- GRAFIK DAN CHART -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+            <!-- Top 5 Anggota dengan Denda Terbanyak -->
+            <div class="bg-dark-200 rounded-xl border border-dark-300 p-5">
+                <h2 class="text-lg font-semibold mb-4 flex items-center">
+                    <span class="w-1 h-5 bg-purple-500 rounded-full mr-3"></span>
+                    Top 5 Anggota dengan Denda Terbanyak
+                </h2>
+                <div class="space-y-3">
+                    <?php $i = 1?>
+                    <?php foreach($dbanggotadendaterbanyak as $row){ ?>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <span class="text-sm text-gray-400 w-6">#<?= $i ?></span>
+                            <span class="font-medium"><?= $row['username'] ?></span>
+                        </div>
+                        <span class="text-sm text-yellow-400">Rp <?= $row['jumlah_denda'] ?>k</span>
+                    </div>
+                    <?php $i++?>
+                    <?php }?>
+                </div>
+            </div>
+            
+            <!-- Kategori Buku Terpopuler -->
+            <div class="bg-dark-200 rounded-xl border border-dark-300 p-5">
+                <h2 class="text-lg font-semibold mb-4 flex items-center">
+                    <span class="w-1 h-5 bg-purple-500 rounded-full mr-3"></span>
+                    Kategori Terpopuler
+                </h2>
+                <div class="space-y-3">
+                    <?php foreach ($jumlahbukuperkategori as $row) {?>
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span class="text-gray-300"><?= $row['kategori'] ?></span>
+                            <span class="text-blue-400"><?= $row['persenan'] ?>%</span>
+                        </div>
+                        <div class="w-full bg-dark-400 rounded-full h-2">
+                            <div class="bg-blue-500 h-2 rounded-full" style="width: <?= $row['persenan']?>%"></div>
+                        </div>
+                    </div>
+                    <?php }?>
+                </div>
+            </div>
+        </div>
+
+        
         <!-- BUKU TERPOPULER & ANGGOTA AKTIF -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <!-- Buku Terpopuler -->
@@ -333,41 +275,18 @@ require '../config/koneksi.php';
                     5 Buku Paling Populer
                 </h2>
                 <div class="space-y-3">
+                    <?php $i = 1;
+                    foreach($dbbukupalingpopuler as $row){ ?>
                     <div class="flex items-center justify-between">
                         <div class="flex items-center gap-3">
-                            <span class="text-sm text-gray-400 w-6">#1</span>
-                            <span class="font-medium">Atomic Habits</span>
+                            <span class="text-sm text-gray-400 w-6">#<?= $i ?></span>
+                            <span class="font-medium"><?= $row['judul'] ?></span>
                         </div>
-                        <span class="text-sm text-blue-400">32x dipinjam</span>
+                        <span class="text-sm text-blue-400"><?= $row['buku'] ?>x dipinjam</span>
                     </div>
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-3">
-                            <span class="text-sm text-gray-400 w-6">#2</span>
-                            <span class="font-medium">Filosofi Teras</span>
-                        </div>
-                        <span class="text-sm text-blue-400">28x dipinjam</span>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-3">
-                            <span class="text-sm text-gray-400 w-6">#3</span>
-                            <span class="font-medium">Clean Code</span>
-                        </div>
-                        <span class="text-sm text-blue-400">24x dipinjam</span>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-3">
-                            <span class="text-sm text-gray-400 w-6">#4</span>
-                            <span class="font-medium">Sapiens</span>
-                        </div>
-                        <span class="text-sm text-blue-400">19x dipinjam</span>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-3">
-                            <span class="text-sm text-gray-400 w-6">#5</span>
-                            <span class="font-medium">The Pragmatic Programmer</span>
-                        </div>
-                        <span class="text-sm text-blue-400">15x dipinjam</span>
-                    </div>
+                    <?php 
+                $i++;
+                };?>
                 </div>
             </div>
 
@@ -378,41 +297,18 @@ require '../config/koneksi.php';
                     5 Anggota Paling Aktif
                 </h2>
                 <div class="space-y-3">
+                    <?php $i = 1?>
+                    <?php foreach($dbanggotapalingpopuler  as $row){?>
                     <div class="flex items-center justify-between">
                         <div class="flex items-center gap-3">
-                            <span class="text-sm text-gray-400 w-6">#1</span>
-                            <span class="font-medium">Raden Adjeng Kartini</span>
+                            <span class="text-sm text-gray-400 w-6">#<?= $i ?></span>
+                            <span class="font-medium"><?= $row['username'] ?></span>
                         </div>
-                        <span class="text-sm text-purple-400">12x pinjam</span>
+                        <span class="text-sm text-purple-400"><?= $row['user_pinjam'] ?>x pinjam</span>
                     </div>
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-3">
-                            <span class="text-sm text-gray-400 w-6">#2</span>
-                            <span class="font-medium">Mohammad Hatta</span>
-                        </div>
-                        <span class="text-sm text-purple-400">10x pinjam</span>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-3">
-                            <span class="text-sm text-gray-400 w-6">#3</span>
-                            <span class="font-medium">Ki Hajar Dewantara</span>
-                        </div>
-                        <span class="text-sm text-purple-400">8x pinjam</span>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-3">
-                            <span class="text-sm text-gray-400 w-6">#4</span>
-                            <span class="font-medium">Dewi Sartika</span>
-                        </div>
-                        <span class="text-sm text-purple-400">7x pinjam</span>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-3">
-                            <span class="text-sm text-gray-400 w-6">#5</span>
-                            <span class="font-medium">Cut Nyak Dien</span>
-                        </div>
-                        <span class="text-sm text-purple-400">5x pinjam</span>
-                    </div>
+                    
+                <?php $i++; 
+                }?>
                 </div>
             </div>
         </div>

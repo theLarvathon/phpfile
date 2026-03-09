@@ -10,6 +10,9 @@ require '../config/koneksi.php';
 // $id = $_GET['id'];
 // $query = mysqli_query($koneksi, "SELECT * FROM books WHERE id_buku='$id'");
 // $buku = mysqli_fetch_assoc($query);
+$id = (int)$_GET['id'];
+$data = QuerySelect("SELECT * FROM books WHERE id_buku = $id")[0];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -80,33 +83,30 @@ require '../config/koneksi.php';
     <main class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <!-- FORM EDIT BUKU -->
         <div class="bg-dark-200 rounded-xl border border-dark-300 p-6">
-            <form action="../proses/edit_buku_proses.php" method="POST" enctype="multipart/form-data">
-                <!-- ID Buku (hidden) -->
-                <input type="hidden" name="id_buku" value="BK001">
+            <form action="../proses/edit_buku.php" method="POST" enctype="multipart/form-data">
                 
                 <!-- Grid 2 kolom -->
+                <div class="hidden">
+                    <label class="block text-sm text-gray-400 mb-1">id <span class="text-red-400">*</span></label>
+                    <input type="hidden" name="id" required value="<?= $data['id_buku'] ?>"
+                           class="w-full bg-dark-300 border border-dark-400 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-500 transition">
+                </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <!-- Kiri -->
                     <div class="space-y-4">
                         <div>
-                            <label class="block text-sm text-gray-400 mb-1">Kode Buku <span class="text-red-400">*</span></label>
-                            <input type="text" name="kode_buku" required value="BK001" readonly
-                                   class="w-full bg-dark-300/50 border border-dark-400 rounded-lg px-4 py-2.5 text-sm text-gray-400 cursor-not-allowed">
-                            <p class="text-xs text-gray-500 mt-1">Kode buku tidak dapat diubah</p>
-                        </div>
-                        <div>
                             <label class="block text-sm text-gray-400 mb-1">Judul Buku <span class="text-red-400">*</span></label>
-                            <input type="text" name="judul" required value="Filosofi Teras"
+                            <input type="text" name="judul" required value="<?= $data['judul'] ?>"
                                    class="w-full bg-dark-300 border border-dark-400 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-500 transition">
                         </div>
                         <div>
                             <label class="block text-sm text-gray-400 mb-1">Penulis <span class="text-red-400">*</span></label>
-                            <input type="text" name="penulis" required value="Henry Manampiring"
+                            <input type="text" name="penulis" required value="<?= $data['penulis'] ?>"
                                    class="w-full bg-dark-300 border border-dark-400 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-500 transition">
                         </div>
                         <div>
                             <label class="block text-sm text-gray-400 mb-1">Penerbit</label>
-                            <input type="text" name="penerbit" value="Gramedia"
+                            <input type="text" name="penerbit" value="<?= $data['penerbit'] ?>"
                                    class="w-full bg-dark-300 border border-dark-400 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-500 transition">
                         </div>
                     </div>
@@ -115,28 +115,33 @@ require '../config/koneksi.php';
                     <div class="space-y-4">
                         <div>
                             <label class="block text-sm text-gray-400 mb-1">Tahun Terbit</label>
-                            <input type="number" name="tahun" value="2023"
+                            <input type="number" name="tahun" value="<?= $data['tahun_terbit'] ?>"
                                    class="w-full bg-dark-300 border border-dark-400 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-500 transition"
                                    min="1900" max="2025">
                         </div>
                         <div>
-                            <label class="block text-sm text-gray-400 mb-1">ISBN</label>
-                            <input type="text" name="isbn" value="978-602-1234-56-7"
-                                   class="w-full bg-dark-300 border border-dark-400 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-500 transition">
-                        </div>
-                        <div>
                             <label class="block text-sm text-gray-400 mb-1">Kategori</label>
                             <select name="kategori" class="w-full bg-dark-300 border border-dark-400 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-500 transition">
-                                <option value="Fiksi" selected>Fiksi</option>
-                                <option value="Nonfiksi">Nonfiksi</option>
-                                <option value="Teknologi">Teknologi</option>
-                                <option value="Sejarah">Sejarah</option>
-                                <option value="Lainnya">Lainnya</option>
+                                <option value="Agama" <?= ($data['kategori'] == 'Agama') ? 'selected' : '' ?>>Agama</option>
+                                <option value="Fiksi" <?= ($data['kategori'] == 'Fiksi') ? 'selected' : '' ?>>Fiksi</option>
+                                <option value="Filsafat" <?= ($data['kategori'] == 'Filsafat') ? 'selected' : '' ?>>Filsafat</option>
+                                <option value="Hukum" <?= ($data['kategori'] == 'Hukum') ? 'selected' : '' ?>>Hukum</option>
+                                <option value="Kedokteran" <?= ($data['kategori'] == 'Kedokteran') ? 'selected' : '' ?>>Kedokteran</option>
+                                <option value="Keuangan" <?= ($data['kategori'] == 'Keuangan') ? 'selected' : '' ?>>Keuangan</option>
+                                <option value="Kuliner" <?= ($data['kategori'] == 'kuliner') ? 'selected' : '' ?>>Kuliner</option>
+                                <option value="Nonfiksi" <?= ($data['kategori'] == 'Nonfiksi') ? 'selected' : '' ?>>Nonfiksi</option>
+                                <option value="Olahraga" <?= ($data['kategori'] == 'Olahraga') ? 'selected' : '' ?>>Olahraga</option>
+                                <option value="Pendidikan" <?= ($data['kategori'] == 'Pendidikan') ? 'selected' : '' ?>>Pendidikan</option>
+                                <option value="Psikologi" <?= ($data['kategori'] == 'Psikologi') ? 'selected' : '' ?>>Psikologi</option>
+                                <option value="Sains" <?= ($data['kategori'] == 'Sains') ? 'selected' : '' ?>>Sains</option>
+                                <option value="Sejarah" <?= ($data['kategori'] == 'Sejarah') ? 'selected' : '' ?>>Sejarah</option>
+                                <option value="Seni" <?= ($data['kategori'] == 'Seni') ? 'selected' : '' ?>>Seni</option>
+                                <option value="Teknologi" <?= ($data['kategori'] == 'Teknologi') ? 'selected' : '' ?>>Teknologi</option>
                             </select>
                         </div>
                         <div>
                             <label class="block text-sm text-gray-400 mb-1">Lokasi Rak</label>
-                            <input type="text" name="rak" value="A1"
+                            <input type="text" name="rak" value="<?= $data['lokasi_rak'] ?>"
                                    class="w-full bg-dark-300 border border-dark-400 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-500 transition">
                         </div>
                     </div>
@@ -146,25 +151,24 @@ require '../config/koneksi.php';
                 <div class="grid grid-cols-2 gap-6 mt-4">
                     <div>
                         <label class="block text-sm text-gray-400 mb-1">Stok Total <span class="text-red-400">*</span></label>
-                        <input type="number" name="stok_total" required min="1" value="12"
+                        <input type="number" name="stok_total" required  value="<?= $data['stok_total'] ?>"
                                class="w-full bg-dark-300 border border-dark-400 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-500 transition">
                     </div>
                     <div>
                         <label class="block text-sm text-gray-400 mb-1">Stok Tersedia</label>
-                        <input type="number" name="stok_tersedia" value="10"
+                        <input type="number" name="stok_tersedia" value="<?= $data['stok_tersedia'] ?>"
                                class="w-full bg-dark-300 border border-dark-400 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-500 transition">
                     </div>
                 </div>
 
-                <!-- Deskripsi -->
+                 <!-- Deskripsi -->
                 <div class="mt-4">
                     <label class="block text-sm text-gray-400 mb-1">Deskripsi / Sinopsis</label>
-                    <textarea name="deskripsi" rows="4" 
-                              class="w-full bg-dark-300 border border-dark-400 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-500 transition">Buku filsafat praktis yang membahas tentang cara menghadapi hidup dengan stoikisme.</textarea>
+                    <textarea name="deskripsi" rows="5" class="w-full bg-dark-300 border border-dark-400 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-500 transition"><?= htmlspecialchars($data['deskripsi'] ?? '') ?></textarea>
                 </div>
 
                 <!-- Cover Preview -->
-                <div class="mt-4">
+                <!-- <div class="mt-4">
                     <label class="block text-sm text-gray-400 mb-1">Cover Buku</label>
                     <div class="flex items-center space-x-4">
                         <div class="w-16 h-20 bg-dark-400 rounded-lg flex items-center justify-center text-3xl">📘</div>
@@ -178,7 +182,7 @@ require '../config/koneksi.php';
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Tombol Submit -->
                 <div class="flex justify-end space-x-3 mt-6 pt-4 border-t border-dark-300">

@@ -80,11 +80,14 @@ $delloans = $_SESSION['deleteloanssucces'] ??null;
 
                 <!-- Right Menu -->
                 <div class="flex items-center space-x-4">
-                    <button class="p-2 hover:bg-dark-300 rounded-lg transition">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linecap="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
-                        </svg>
-                    </button>
+                    <a href="../proses/logout_proses.php">
+
+                        <button class="p-2 hover:bg-dark-300 rounded-lg transition">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linecap="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+                            </svg>
+                        </button>
+                    </a>
                 </div>
             </div>
 
@@ -263,27 +266,17 @@ $delloans = $_SESSION['deleteloanssucces'] ??null;
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-dark-300">
+                        <?php $i=1;
+                        foreach($peminjamanterbaruUser as $row):?>
                         <tr class="hover:bg-dark-300/50 transition">
-                            <td class="py-3 px-4">1</td>
-                            <td class="py-3 px-4">Pemrograman PHP</td>
-                            <td class="py-3 px-4">10 Feb 2025</td>
-                            <td class="py-3 px-4">17 Feb 2025</td>
+                            <td class="py-3 px-4"><?= $i ?></td>
+                            <td class="py-3 px-4"><?= $row['judul'] ?></td>
+                            <td class="py-3 px-4"><?= $row['tanggal_pinjam'] ?></</td>
+                            <td class="py-3 px-4"><?= $row['tanggal_kembali'] ?></</td>
                             <td class="py-3 px-4"><span class="bg-green-500/20 text-green-400 px-2 py-1 rounded-full text-xs">Tepat waktu</span></td>
                         </tr>
-                        <tr class="hover:bg-dark-300/50 transition">
-                            <td class="py-3 px-4">2</td>
-                            <td class="py-3 px-4">Database MySQL</td>
-                            <td class="py-3 px-4">03 Feb 2025</td>
-                            <td class="py-3 px-4">10 Feb 2025</td>
-                            <td class="py-3 px-4"><span class="bg-red-500/20 text-red-400 px-2 py-1 rounded-full text-xs">Terlambat 2 hari</span></td>
-                        </tr>
-                        <tr class="hover:bg-dark-300/50 transition">
-                            <td class="py-3 px-4">3</td>
-                            <td class="py-3 px-4">HTML & CSS</td>
-                            <td class="py-3 px-4">25 Jan 2025</td>
-                            <td class="py-3 px-4">01 Feb 2025</td>
-                            <td class="py-3 px-4"><span class="bg-green-500/20 text-green-400 px-2 py-1 rounded-full text-xs">Tepat waktu</span></td>
-                        </tr>
+                    <?php $i++;
+                    endforeach;?>
                     </tbody>
                 </table>
             </div>

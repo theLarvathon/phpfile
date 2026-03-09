@@ -1,6 +1,6 @@
 <?php 
+require '../config/koneksi.php';
 include '../includes/header.php';
-include '../config/koneksi.php'
 ?>
 <!DOCTYPE html>
 <html lang="en">

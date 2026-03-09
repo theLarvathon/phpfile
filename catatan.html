@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dokumentasi Fungsi PHP - Tema Gelap Modern</title>
+    <title>Dokumentasi Fungsi PHP & SQL - Tema Gelap Modern</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome untuk ikon (opsional) -->
+    <!-- Font Awesome untuk ikon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
@@ -15,7 +15,7 @@
             font-family: 'Inter', sans-serif;
         }
         
-        /* Custom scrollbar untuk tampilan lebih modern */
+        /* Custom scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
             height: 8px;
@@ -61,49 +61,50 @@
     <!-- Container Utama -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         
-        <!-- Header dengan gradient -->
+        <!-- Header -->
         <div class="mb-10 text-center">
             <div class="inline-block p-3 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl shadow-lg mb-4">
                 <i class="fas fa-code text-white text-3xl"></i>
             </div>
             <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
-                Dokumentasi Fungsi PHP
+                Dokumentasi Fungsi PHP & SQL
             </h1>
             <p class="text-gray-400 text-lg mt-3 max-w-2xl mx-auto">
-                Koleksi lengkap fungsi MySQLi, Network, Output Control, Regular Expression, SimpleXML, dan SimpleXML Iteration
+                Koleksi lengkap fungsi PHP (MySQLi, Network, Output, Regex, SimpleXML) dan SQL Server, MS Access
             </p>
             <div class="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mt-4 rounded-full"></div>
         </div>
 
         <!-- Statistik Cepat -->
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 mb-10">
-            <div class="bg-gray-800 rounded-xl p-4 text-center border border-gray-700 hover:border-indigo-500 transition-all">
+            <div class="bg-gray-800 rounded-xl p-4 text-center border border-gray-700">
                 <div class="text-indigo-400 text-2xl font-bold">84</div>
-                <div class="text-gray-400 text-sm">MySQLi</div>
+                <div class="text-gray-400 text-sm">PHP MySQLi</div>
             </div>
-            <div class="bg-gray-800 rounded-xl p-4 text-center border border-gray-700 hover:border-purple-500 transition-all">
+            <div class="bg-gray-800 rounded-xl p-4 text-center border border-gray-700">
                 <div class="text-purple-400 text-2xl font-bold">33</div>
-                <div class="text-gray-400 text-sm">Network</div>
+                <div class="text-gray-400 text-sm">PHP Network</div>
             </div>
-            <div class="bg-gray-800 rounded-xl p-4 text-center border border-gray-700 hover:border-pink-500 transition-all">
+            <div class="bg-gray-800 rounded-xl p-4 text-center border border-gray-700">
                 <div class="text-pink-400 text-2xl font-bold">17</div>
-                <div class="text-gray-400 text-sm">Output Control</div>
+                <div class="text-gray-400 text-sm">PHP Output</div>
             </div>
-            <div class="bg-gray-800 rounded-xl p-4 text-center border border-gray-700 hover:border-blue-500 transition-all">
+            <div class="bg-gray-800 rounded-xl p-4 text-center border border-gray-700">
                 <div class="text-blue-400 text-2xl font-bold">10</div>
-                <div class="text-gray-400 text-sm">Regex</div>
+                <div class="text-gray-400 text-sm">PHP Regex</div>
             </div>
-            <div class="bg-gray-800 rounded-xl p-4 text-center border border-gray-700 hover:border-green-500 transition-all">
-                <div class="text-green-400 text-2xl font-bold">17</div>
-                <div class="text-gray-400 text-sm">SimpleXML</div>
+            <div class="bg-gray-800 rounded-xl p-4 text-center border border-gray-700">
+                <div class="text-green-400 text-2xl font-bold">24</div>
+                <div class="text-gray-400 text-sm">PHP SimpleXML</div>
             </div>
-            <div class="bg-gray-800 rounded-xl p-4 text-center border border-gray-700 hover:border-yellow-500 transition-all">
-                <div class="text-yellow-400 text-2xl font-bold">7</div>
-                <div class="text-gray-400 text-sm">Iteration</div>
+            <div class="bg-gray-800 rounded-xl p-4 text-center border border-gray-700">
+                <div class="text-yellow-400 text-2xl font-bold">135</div>
+                <div class="text-gray-400 text-sm">SQL Functions</div>
             </div>
         </div>
 
-        <!-- Fungsi MySQLi -->
+        <!-- ==================== BAGIAN PHP (dari sebelumnya) ==================== -->
+        <!-- PHP MySQLi Functions -->
         <div class="mb-12">
             <div class="flex items-center gap-3 mb-5">
                 <div class="w-1 h-8 bg-indigo-500 rounded-full"></div>
@@ -123,7 +124,7 @@
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-700">
-                            <!-- Data akan diisi dengan loop JavaScript agar lebih rapi -->
+                            <!-- Data MySQLi (84 fungsi) -->
                             <tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">affected_rows()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan jumlah baris yang terpengaruh pada operasi MySQL sebelumnya</td></tr>
 <tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">autocommit()</td><td class="px-6 py-3 text-sm text-gray-300">Mengaktifkan atau menonaktifkan mode auto-commit untuk modifikasi database</td></tr>
 <tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-indigo-300">begin_transaction()</td><td class="px-6 py-3 text-sm text-gray-300">Memulai sebuah transaksi</td></tr>
@@ -235,4 +236,616 @@
 <tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-purple-300">header_register_callback()</td><td class="px-6 py-3 text-sm text-gray-300">Memanggil fungsi header</td></tr>
 <tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-purple-300">header_remove()</td><td class="px-6 py-3 text-sm text-gray-300">Menghapus header HTTP yang sebelumnya diatur dengan fungsi header()</td></tr>
 <tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-purple-300">header()</td><td class="px-6 py-3 text-sm text-gray-300">Mengirim header HTTP mentah ke klien</td></tr>
-<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-purple-300">headers_list()
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-purple-300">headers_list()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan daftar header respons yang akan dikirim ke browser</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-purple-300">headers_sent()</td><td class="px-6 py-3 text-sm text-gray-300">Memeriksa apakah/di mana header telah dikirim</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-purple-300">http_response_code()</td><td class="px-6 py-3 text-sm text-gray-300">Mengatur atau mengembalikan kode status respons HTTP</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-purple-300">inet_ntop()</td><td class="px-6 py-3 text-sm text-gray-300">Mengonversi alamat IPv4 32bit atau IPv6 128bit ke dalam format yang dapat dibaca</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-purple-300">inet_pton()</td><td class="px-6 py-3 text-sm text-gray-300">Mengonversi alamat IP yang dapat dibaca ke dalam format packed IPv4 32bit atau IPv6 128bit</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-purple-300">ip2long()</td><td class="px-6 py-3 text-sm text-gray-300">Mengonversi alamat IPv4 menjadi integer panjang</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-purple-300">long2ip()</td><td class="px-6 py-3 text-sm text-gray-300">Mengonversi alamat integer panjang menjadi string dalam format IPv4</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-purple-300">openlog()</td><td class="px-6 py-3 text-sm text-gray-300">Membuka koneksi system logger</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-purple-300">pfsockopen()</td><td class="px-6 py-3 text-sm text-gray-300">Membuka koneksi socket Internet atau domain Unix yang persisten</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-purple-300">setcookie()</td><td class="px-6 py-3 text-sm text-gray-300">Mendefinisikan cookie untuk dikirim bersama sisa header HTTP</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-purple-300">setrawcookie()</td><td class="px-6 py-3 text-sm text-gray-300">Mendefinisikan cookie (tanpa encoding URL) untuk dikirim bersama sisa header HTTP</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-purple-300">socket_get_status()</td><td class="px-6 py-3 text-sm text-gray-300">Alias dari stream_get_meta_data()</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-purple-300">socket_set_blocking()</td><td class="px-6 py-3 text-sm text-gray-300">Alias dari stream_set_blocking()</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-purple-300">socket_set_timeout()</td><td class="px-6 py-3 text-sm text-gray-300">Alias dari stream_set_timeout()</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-purple-300">syslog()</td><td class="px-6 py-3 text-sm text-gray-300">Menghasilkan pesan log sistem</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- PHP Output Control Functions -->
+        <div class="mb-12">
+            <div class="flex items-center gap-3 mb-5">
+                <div class="w-1 h-8 bg-pink-500 rounded-full"></div>
+                <h2 class="text-2xl font-semibold text-white flex items-center gap-2">
+                    <i class="fas fa-print text-pink-400"></i>
+                    PHP Output Control Functions
+                </h2>
+                <span class="bg-pink-600 text-xs px-3 py-1 rounded-full text-white ml-auto">17 fungsi</span>
+            </div>
+            <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden shadow-2xl">
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-gray-700">
+                            <tr>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-gray-200 uppercase tracking-wider">Method</th>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-gray-200 uppercase tracking-wider">Deskripsi (Terjemahan)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-700">
+                            <tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-pink-300">flush()</td><td class="px-6 py-3 text-sm text-gray-300">Mencoba mengirim konten dari buffer output sistem ke browser</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-pink-300">ob_clean()</td><td class="px-6 py-3 text-sm text-gray-300">Menghapus semua konten dari buffer output paling atas</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-pink-300">ob_end_clean()</td><td class="px-6 py-3 text-sm text-gray-300">Menghapus buffer output paling atas dan semua isinya</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-pink-300">ob_end_flush()</td><td class="px-6 py-3 text-sm text-gray-300">Menghapus buffer output paling atas dan mengeluarkan isinya</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-pink-300">ob_flush()</td><td class="px-6 py-3 text-sm text-gray-300">Mengeluarkan isi dari buffer output paling atas dan membersihkan buffer</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-pink-300">ob_get_clean()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan semua isi dari buffer output paling atas dan membersihkan buffer</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-pink-300">ob_get_contents()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan isi dari buffer output paling atas</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-pink-300">ob_get_flush()</td><td class="px-6 py-3 text-sm text-gray-300">Mengeluarkan dan mengembalikan isi dari buffer output paling atas, lalu menghapus buffer</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-pink-300">ob_get_length()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan jumlah byte data yang ada di buffer output paling atas</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-pink-300">ob_get_level()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan angka yang menunjukkan berapa banyak buffer output yang ada di stack</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-pink-300">ob_get_status()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan informasi tentang buffer output</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-pink-300">ob_gzhandler()</td><td class="px-6 py-3 text-sm text-gray-300">Digunakan sebagai fungsi callback untuk ob_start() guna mengompresi isi buffer saat mengirimnya ke browser</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-pink-300">ob_implicit_flush()</td><td class="px-6 py-3 text-sm text-gray-300">Mengaktifkan atau menonaktifkan implicit flushing</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-pink-300">ob_list_handlers()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan array nama fungsi callback yang digunakan oleh buffer output paling atas</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-pink-300">ob_start()</td><td class="px-6 py-3 text-sm text-gray-300">Membuat buffer output baru dan menambahkannya ke bagian atas stack</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-pink-300">output_add_rewrite_var()</td><td class="px-6 py-3 text-sm text-gray-300">Digunakan untuk menambahkan parameter query string ke URL mana pun dalam output</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-pink-300">output_reset_rewrite_vars()</td><td class="px-6 py-3 text-sm text-gray-300">Menghapus semua variabel yang ditambahkan oleh output_add_rewrite_var()</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- PHP Regular Expression Functions -->
+        <div class="mb-12">
+            <div class="flex items-center gap-3 mb-5">
+                <div class="w-1 h-8 bg-blue-500 rounded-full"></div>
+                <h2 class="text-2xl font-semibold text-white flex items-center gap-2">
+                    <i class="fas fa-code text-blue-400"></i>
+                    PHP Regular Expression Functions
+                </h2>
+                <span class="bg-blue-600 text-xs px-3 py-1 rounded-full text-white ml-auto">10 fungsi</span>
+            </div>
+            <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden shadow-2xl">
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-gray-700">
+                            <tr>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-gray-200 uppercase tracking-wider">Function</th>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-gray-200 uppercase tracking-wider">Deskripsi (Terjemahan)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-700">
+                            <tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-blue-300">preg_filter()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan string atau array dengan kecocokan pola yang diganti, tetapi hanya jika kecocokan ditemukan</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-blue-300">preg_grep()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan array yang hanya terdiri dari elemen-elemen dari array input yang cocok dengan pola</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-blue-300">preg_last_error()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan kode error yang menunjukkan alasan kegagalan panggilan ekspresi reguler terbaru</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-blue-300">preg_match()</td><td class="px-6 py-3 text-sm text-gray-300">Menemukan kecocokan pertama dari sebuah pola dalam sebuah string</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-blue-300">preg_match_all()</td><td class="px-6 py-3 text-sm text-gray-300">Menemukan semua kecocokan dari sebuah pola dalam sebuah string</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-blue-300">preg_replace()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan string di mana kecocokan pola (atau array pola) diganti dengan substring (atau array substring) dalam string yang diberikan</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-blue-300">preg_replace_callback()</td><td class="px-6 py-3 text-sm text-gray-300">Diberikan sebuah ekspresi dan callback, mengembalikan string di mana semua kecocokan ekspresi diganti dengan substring yang dikembalikan oleh callback</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-blue-300">preg_replace_callback_array()</td><td class="px-6 py-3 text-sm text-gray-300">Diberikan sebuah array yang mengasosiasikan ekspresi dengan callback, mengembalikan string di mana semua kecocokan setiap ekspresi diganti dengan substring yang dikembalikan oleh callback</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-blue-300">preg_split()</td><td class="px-6 py-3 text-sm text-gray-300">Memecah string menjadi array menggunakan kecocokan ekspresi reguler sebagai pemisah</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-blue-300">preg_quote()</td><td class="px-6 py-3 text-sm text-gray-300">Melakukan escape pada karakter yang memiliki arti khusus dalam ekspresi reguler dengan menempatkan garis miring terbalik di depannya</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- PHP SimpleXML Functions -->
+        <div class="mb-12">
+            <div class="flex items-center gap-3 mb-5">
+                <div class="w-1 h-8 bg-green-500 rounded-full"></div>
+                <h2 class="text-2xl font-semibold text-white flex items-center gap-2">
+                    <i class="fas fa-file-code text-green-400"></i>
+                    PHP SimpleXML Functions
+                </h2>
+                <span class="bg-green-600 text-xs px-3 py-1 rounded-full text-white ml-auto">17 fungsi</span>
+            </div>
+            <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden shadow-2xl">
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-gray-700">
+                            <tr>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-gray-200 uppercase tracking-wider">Function</th>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-gray-200 uppercase tracking-wider">Deskripsi (Terjemahan)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-700">
+                            <tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-green-300">__construct()</td><td class="px-6 py-3 text-sm text-gray-300">Membuat objek SimpleXMLElement baru</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-green-300">__toString()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan konten string dari sebuah elemen</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-green-300">addAttribute()</td><td class="px-6 py-3 text-sm text-gray-300">Menambahkan atribut ke elemen SimpleXML</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-green-300">addChild()</td><td class="px-6 py-3 text-sm text-gray-300">Menambahkan elemen anak ke elemen SimpleXML</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-green-300">asXML()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan string XML yang terbentuk dengan baik (versi XML 1.0) dari objek SimpleXML</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-green-300">attributes()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan atribut/nilai dari sebuah elemen</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-green-300">children()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan anak-anak dari node yang ditentukan</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-green-300">count()</td><td class="px-6 py-3 text-sm text-gray-300">Menghitung anak-anak dari node yang ditentukan</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-green-300">getDocNamespaces()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan namespace yang dideklarasikan dalam dokumen</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-green-300">getName()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan nama sebuah elemen</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-green-300">getNamespaces()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan namespace yang digunakan dalam dokumen</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-green-300">registerXPathNamespace()</td><td class="px-6 py-3 text-sm text-gray-300">Membuat konteks namespace untuk query XPath berikutnya</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-green-300">saveXML()</td><td class="px-6 py-3 text-sm text-gray-300">Alias dari asXML()</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-green-300">simplexml_import_dom()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan objek SimpleXMLElement dari node DOM</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-green-300">simplexml_load_file()</td><td class="px-6 py-3 text-sm text-gray-300">Mengonversi dokumen XML menjadi sebuah objek</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-green-300">simplexml_load_string()</td><td class="px-6 py-3 text-sm text-gray-300">Mengonversi string XML menjadi sebuah objek</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-green-300">xpath()</td><td class="px-6 py-3 text-sm text-gray-300">Menjalankan query XPath pada data XML</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- PHP SimpleXML Iteration Functions -->
+        <div class="mb-12">
+            <div class="flex items-center gap-3 mb-5">
+                <div class="w-1 h-8 bg-yellow-500 rounded-full"></div>
+                <h2 class="text-2xl font-semibold text-white flex items-center gap-2">
+                    <i class="fas fa-sync-alt text-yellow-400"></i>
+                    PHP SimpleXML Iteration Functions
+                </h2>
+                <span class="bg-yellow-600 text-xs px-3 py-1 rounded-full text-white ml-auto">7 fungsi</span>
+            </div>
+            <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden shadow-2xl">
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-gray-700">
+                            <tr>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-gray-200 uppercase tracking-wider">Function</th>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-gray-200 uppercase tracking-wider">Deskripsi (Terjemahan)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-700">
+                            <tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-yellow-300">current()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan elemen saat ini</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-yellow-300">getChildren()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan elemen anak dari elemen saat ini</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-yellow-300">hasChildren()</td><td class="px-6 py-3 text-sm text-gray-300">Memeriksa apakah elemen saat ini memiliki anak</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-yellow-300">key()</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan nama tag XML dari elemen saat ini</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-yellow-300">next()</td><td class="px-6 py-3 text-sm text-gray-300">Berpindah ke elemen berikutnya</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-yellow-300">rewind()</td><td class="px-6 py-3 text-sm text-gray-300">Memundurkan ke elemen pertama</td></tr>
+<tr class="hover:bg-gray-750 transition-colors"><td class="px-6 py-3 font-mono text-sm text-yellow-300">valid()</td><td class="px-6 py-3 text-sm text-gray-300">Memeriksa apakah elemen saat ini valid</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== BAGIAN SQL SERVER ==================== -->
+        <!-- SQL Server String Functions -->
+        <div class="mb-12">
+            <div class="flex items-center gap-3 mb-5">
+                <div class="w-1 h-8 bg-orange-500 rounded-full"></div>
+                <h2 class="text-2xl font-semibold text-white flex items-center gap-2">
+                    <i class="fas fa-font text-orange-400"></i>
+                    SQL Server String Functions
+                </h2>
+                <span class="bg-orange-600 text-xs px-3 py-1 rounded-full text-white ml-auto">31 fungsi</span>
+            </div>
+            <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden shadow-2xl">
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-gray-700">
+                            <tr>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-gray-200 uppercase tracking-wider">Function</th>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-gray-200 uppercase tracking-wider">Deskripsi (Terjemahan)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-700">
+                            <tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-orange-300">ASCII</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan nilai ASCII untuk karakter tertentu</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-orange-300">CHAR</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan karakter berdasarkan kode ASCII</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-orange-300">CHARINDEX</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan posisi substring dalam sebuah string</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-orange-300">CONCAT</td><td class="px-6 py-3 text-sm text-gray-300">Menambahkan dua atau lebih string bersama-sama</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-orange-300">Concat with +</td><td class="px-6 py-3 text-sm text-gray-300">Menambahkan dua atau lebih string bersama-sama</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-orange-300">CONCAT_WS</td><td class="px-6 py-3 text-sm text-gray-300">Menambahkan dua atau lebih string bersama-sama dengan pemisah</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-orange-300">DATALENGTH</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan jumlah byte yang digunakan untuk merepresentasikan ekspresi</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-orange-300">DIFFERENCE</td><td class="px-6 py-3 text-sm text-gray-300">Membandingkan dua nilai SOUNDEX, dan mengembalikan nilai integer</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-orange-300">FORMAT</td><td class="px-6 py-3 text-sm text-gray-300">Memformat nilai dengan format yang ditentukan</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-orange-300">LEFT</td><td class="px-6 py-3 text-sm text-gray-300">Mengekstrak sejumlah karakter dari string (dimulai dari kiri)</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-orange-300">LEN</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan panjang sebuah string</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-orange-300">LOWER</td><td class="px-6 py-3 text-sm text-gray-300">Mengonversi string menjadi huruf kecil</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-orange-300">LTRIM</td><td class="px-6 py-3 text-sm text-gray-300">Menghapus spasi awal dari sebuah string</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-orange-300">NCHAR</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan karakter Unicode berdasarkan kode angka</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-orange-300">PATINDEX</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan posisi pola dalam sebuah string</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-orange-300">QUOTENAME</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan string Unicode dengan pembatas ditambahkan untuk membuat string menjadi pengenal terbatas SQL Server yang valid</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-orange-300">REPLACE</td><td class="px-6 py-3 text-sm text-gray-300">Mengganti semua kemunculan substring dalam string, dengan substring baru</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-orange-300">REPLICATE</td><td class="px-6 py-3 text-sm text-gray-300">Mengulangi string sebanyak jumlah yang ditentukan</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-orange-300">REVERSE</td><td class="px-6 py-3 text-sm text-gray-300">Membalikkan string dan mengembalikan hasilnya</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-orange-300">RIGHT</td><td class="px-6 py-3 text-sm text-gray-300">Mengekstrak sejumlah karakter dari string (dimulai dari kanan)</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-orange-300">RTRIM</td><td class="px-6 py-3 text-sm text-gray-300">Menghapus spasi akhir dari sebuah string</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-orange-300">SOUNDEX</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan kode empat karakter untuk mengevaluasi kemiripan dua string</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-orange-300">SPACE</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan string dengan jumlah karakter spasi yang ditentukan</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-orange-300">STR</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan angka sebagai string</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-orange-300">STUFF</td><td class="px-6 py-3 text-sm text-gray-300">Menghapus bagian dari string dan kemudian menyisipkan bagian lain ke dalam string, dimulai dari posisi yang ditentukan</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-orange-300">SUBSTRING</td><td class="px-6 py-3 text-sm text-gray-300">Mengekstrak beberapa karakter dari string</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-orange-300">TRANSLATE</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan string dari argumen pertama setelah karakter yang ditentukan dalam argumen kedua diterjemahkan ke dalam karakter yang ditentukan dalam argumen ketiga</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-orange-300">TRIM</td><td class="px-6 py-3 text-sm text-gray-300">Menghapus spasi awal dan akhir (atau karakter lain yang ditentukan) dari string</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-orange-300">UNICODE</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan nilai Unicode untuk karakter pertama dari ekspresi input</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-orange-300">UPPER</td><td class="px-6 py-3 text-sm text-gray-300">Mengonversi string menjadi huruf besar</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-orange-300">REMOVE ADS</td><td class="px-6 py-3 text-sm text-gray-300">Menghapus iklan</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- SQL Server Math/Numeric Functions -->
+        <div class="mb-12">
+            <div class="flex items-center gap-3 mb-5">
+                <div class="w-1 h-8 bg-red-500 rounded-full"></div>
+                <h2 class="text-2xl font-semibold text-white flex items-center gap-2">
+                    <i class="fas fa-calculator text-red-400"></i>
+                    SQL Server Math/Numeric Functions
+                </h2>
+                <span class="bg-red-600 text-xs px-3 py-1 rounded-full text-white ml-auto">28 fungsi</span>
+            </div>
+            <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden shadow-2xl">
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-gray-700">
+                            <tr>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-gray-200 uppercase tracking-wider">Function</th>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-gray-200 uppercase tracking-wider">Deskripsi (Terjemahan)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-700">
+                            <tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-red-300">ABS</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan nilai absolut dari sebuah angka</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-red-300">ACOS</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan arc kosinus dari sebuah angka</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-red-300">ASIN</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan arc sinus dari sebuah angka</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-red-300">ATAN</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan arc tangen dari sebuah angka</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-red-300">ATN2</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan arc tangen dari dua angka</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-red-300">AVG</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan nilai rata-rata dari sebuah ekspresi</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-red-300">CEILING</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan nilai integer terkecil yang >= sebuah angka</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-red-300">COUNT</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan jumlah record yang dikembalikan oleh query select</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-red-300">COS</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan kosinus dari sebuah angka</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-red-300">COT</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan kotangen dari sebuah angka</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-red-300">DEGREES</td><td class="px-6 py-3 text-sm text-gray-300">Mengonversi nilai dalam radian ke derajat</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-red-300">EXP</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan e dipangkatkan dengan angka yang ditentukan</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-red-300">FLOOR</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan nilai integer terbesar yang <= sebuah angka</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-red-300">LOG</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan logaritma natural dari angka, atau logaritma angka ke basis yang ditentukan</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-red-300">LOG10</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan logaritma natural dari angka ke basis 10</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-red-300">MAX</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan nilai maksimum dalam satu set nilai</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-red-300">MIN</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan nilai minimum dalam satu set nilai</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-red-300">PI</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan nilai PI</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-red-300">POWER</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan nilai angka yang dipangkatkan dengan angka lain</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-red-300">RADIANS</td><td class="px-6 py-3 text-sm text-gray-300">Mengonversi nilai derajat ke radian</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-red-300">RAND</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan angka acak</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-red-300">ROUND</td><td class="px-6 py-3 text-sm text-gray-300">Membulatkan angka ke jumlah tempat desimal yang ditentukan</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-red-300">SIGN</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan tanda dari sebuah angka</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-red-300">SIN</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan sinus dari sebuah angka</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-red-300">SQRT</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan akar kuadrat dari sebuah angka</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-red-300">SQUARE</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan kuadrat dari sebuah angka</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-red-300">SUM</td><td class="px-6 py-3 text-sm text-gray-300">Menghitung jumlah dari satu set nilai</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-red-300">TAN</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan tangen dari sebuah angka</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- SQL Server Date Functions -->
+        <div class="mb-12">
+            <div class="flex items-center gap-3 mb-5">
+                <div class="w-1 h-8 bg-teal-500 rounded-full"></div>
+                <h2 class="text-2xl font-semibold text-white flex items-center gap-2">
+                    <i class="fas fa-calendar-alt text-teal-400"></i>
+                    SQL Server Date Functions
+                </h2>
+                <span class="bg-teal-600 text-xs px-3 py-1 rounded-full text-white ml-auto">14 fungsi</span>
+            </div>
+            <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden shadow-2xl">
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-gray-700">
+                            <tr>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-gray-200 uppercase tracking-wider">Function</th>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-gray-200 uppercase tracking-wider">Deskripsi (Terjemahan)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-700">
+                            <tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-teal-300">CURRENT_TIMESTAMP</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan tanggal dan waktu saat ini</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-teal-300">DATEADD</td><td class="px-6 py-3 text-sm text-gray-300">Menambahkan interval waktu/tanggal ke tanggal dan kemudian mengembalikan tanggal</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-teal-300">DATEDIFF</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan perbedaan antara dua tanggal</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-teal-300">DATEFROMPARTS</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan tanggal dari bagian yang ditentukan (nilai tahun, bulan, dan hari)</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-teal-300">DATENAME</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan bagian tertentu dari tanggal (sebagai string)</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-teal-300">DATEPART</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan bagian tertentu dari tanggal (sebagai integer)</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-teal-300">DAY</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan hari dalam bulan untuk tanggal yang ditentukan</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-teal-300">GETDATE</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan tanggal dan waktu sistem database saat ini</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-teal-300">GETUTCDATE</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan tanggal dan waktu UTC sistem database saat ini</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-teal-300">ISDATE</td><td class="px-6 py-3 text-sm text-gray-300">Memeriksa ekspresi dan mengembalikan 1 jika itu adalah tanggal yang valid, jika tidak 0</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-teal-300">MONTH</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan bagian bulan untuk tanggal yang ditentukan (angka dari 1 hingga 12)</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-teal-300">SYSDATETIME</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan tanggal dan waktu dari SQL Server</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-teal-300">YEAR</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan bagian tahun untuk tanggal yang ditentukan</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- SQL Server Advanced Functions -->
+        <div class="mb-12">
+            <div class="flex items-center gap-3 mb-5">
+                <div class="w-1 h-8 bg-cyan-500 rounded-full"></div>
+                <h2 class="text-2xl font-semibold text-white flex items-center gap-2">
+                    <i class="fas fa-cogs text-cyan-400"></i>
+                    SQL Server Advanced Functions
+                </h2>
+                <span class="bg-cyan-600 text-xs px-3 py-1 rounded-full text-white ml-auto">11 fungsi</span>
+            </div>
+            <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden shadow-2xl">
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-gray-700">
+                            <tr>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-gray-200 uppercase tracking-wider">Function</th>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-gray-200 uppercase tracking-wider">Deskripsi (Terjemahan)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-700">
+                            <tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-cyan-300">CAST</td><td class="px-6 py-3 text-sm text-gray-300">Mengonversi nilai (dari tipe apa pun) ke dalam tipe data yang ditentukan</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-cyan-300">COALESCE</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan nilai non-null pertama dalam daftar</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-cyan-300">CONVERT</td><td class="px-6 py-3 text-sm text-gray-300">Mengonversi nilai (dari tipe apa pun) ke dalam tipe data yang ditentukan</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-cyan-300">CURRENT_USER</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan nama pengguna saat ini di database SQL Server</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-cyan-300">IIF</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan satu nilai jika kondisi TRUE, atau nilai lain jika kondisi FALSE</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-cyan-300">ISNULL</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan nilai yang ditentukan jika ekspresi adalah NULL, jika tidak mengembalikan ekspresi</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-cyan-300">ISNUMERIC</td><td class="px-6 py-3 text-sm text-gray-300">Menguji apakah suatu ekspresi bersifat numerik</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-cyan-300">NULLIF</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan NULL jika dua ekspresi sama</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-cyan-300">SESSION_USER</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan nama pengguna saat ini di database SQL Server</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-cyan-300">SESSIONPROPERTY</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan pengaturan sesi untuk opsi yang ditentukan</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-cyan-300">SYSTEM_USER</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan nama login untuk pengguna saat ini</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-cyan-300">USER_NAME</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan nama pengguna database berdasarkan id yang ditentukan</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== BAGIAN MS ACCESS ==================== -->
+        <!-- MS Access String Functions -->
+        <div class="mb-12">
+            <div class="flex items-center gap-3 mb-5">
+                <div class="w-1 h-8 bg-lime-500 rounded-full"></div>
+                <h2 class="text-2xl font-semibold text-white flex items-center gap-2">
+                    <i class="fas fa-i-cursor text-lime-400"></i>
+                    MS Access String Functions
+                </h2>
+                <span class="bg-lime-600 text-xs px-3 py-1 rounded-full text-white ml-auto">23 fungsi</span>
+            </div>
+            <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden shadow-2xl">
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-gray-700">
+                            <tr>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-gray-200 uppercase tracking-wider">Function</th>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-gray-200 uppercase tracking-wider">Deskripsi (Terjemahan)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-700">
+                            <tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-lime-300">Asc</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan nilai ASCII untuk karakter tertentu</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-lime-300">Chr</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan karakter untuk kode angka ASCII yang ditentukan</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-lime-300">Concat with &</td><td class="px-6 py-3 text-sm text-gray-300">Menambahkan dua atau lebih string bersama-sama</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-lime-300">CurDir</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan jalur lengkap untuk drive yang ditentukan</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-lime-300">Format</td><td class="px-6 py-3 text-sm text-gray-300">Memformat nilai dengan format yang ditentukan</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-lime-300">InStr</td><td class="px-6 py-3 text-sm text-gray-300">Mendapatkan posisi kemunculan pertama string dalam string lain</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-lime-300">InstrRev</td><td class="px-6 py-3 text-sm text-gray-300">Mendapatkan posisi kemunculan pertama string dalam string lain, dari akhir string</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-lime-300">LCase</td><td class="px-6 py-3 text-sm text-gray-300">Mengonversi string menjadi huruf kecil</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-lime-300">Left</td><td class="px-6 py-3 text-sm text-gray-300">Mengekstrak sejumlah karakter dari string (dimulai dari kiri)</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-lime-300">Len</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan panjang sebuah string</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-lime-300">LTrim</td><td class="px-6 py-3 text-sm text-gray-300">Menghapus spasi awal dari sebuah string</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-lime-300">Mid</td><td class="px-6 py-3 text-sm text-gray-300">Mengekstrak beberapa karakter dari string (dimulai dari posisi mana pun)</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-lime-300">Replace</td><td class="px-6 py-3 text-sm text-gray-300">Mengganti substring dalam string, dengan substring lain, sejumlah kali yang ditentukan</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-lime-300">Right</td><td class="px-6 py-3 text-sm text-gray-300">Mengekstrak sejumlah karakter dari string (dimulai dari kanan)</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-lime-300">RTrim</td><td class="px-6 py-3 text-sm text-gray-300">Menghapus spasi akhir dari sebuah string</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-lime-300">Space</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan string dengan jumlah karakter spasi yang ditentukan</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-lime-300">Split</td><td class="px-6 py-3 text-sm text-gray-300">Memecah string menjadi array substring</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-lime-300">Str</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan angka sebagai string</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-lime-300">StrComp</td><td class="px-6 py-3 text-sm text-gray-300">Membandingkan dua string</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-lime-300">StrConv</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan string yang telah dikonversi</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-lime-300">StrReverse</td><td class="px-6 py-3 text-sm text-gray-300">Membalikkan string dan mengembalikan hasilnya</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-lime-300">Trim</td><td class="px-6 py-3 text-sm text-gray-300">Menghapus spasi awal dan akhir dari string</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-lime-300">UCase</td><td class="px-6 py-3 text-sm text-gray-300">Mengonversi string menjadi huruf besar</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-lime-300">REMOVE ADS</td><td class="px-6 py-3 text-sm text-gray-300">Menghapus iklan</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- MS Access Numeric Functions -->
+        <div class="mb-12">
+            <div class="flex items-center gap-3 mb-5">
+                <div class="w-1 h-8 bg-emerald-500 rounded-full"></div>
+                <h2 class="text-2xl font-semibold text-white flex items-center gap-2">
+                    <i class="fas fa-chart-bar text-emerald-400"></i>
+                    MS Access Numeric Functions
+                </h2>
+                <span class="bg-emerald-600 text-xs px-3 py-1 rounded-full text-white ml-auto">17 fungsi</span>
+            </div>
+            <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden shadow-2xl">
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-gray-700">
+                            <tr>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-gray-200 uppercase tracking-wider">Function</th>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-gray-200 uppercase tracking-wider">Deskripsi (Terjemahan)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-700">
+                            <tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-emerald-300">Abs</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan nilai absolut dari sebuah angka</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-emerald-300">Atn</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan arc tangen dari sebuah angka</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-emerald-300">Avg</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan nilai rata-rata dari sebuah ekspresi</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-emerald-300">Cos</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan kosinus dari sebuah sudut</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-emerald-300">Count</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan jumlah record yang dikembalikan oleh query select</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-emerald-300">Exp</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan e dipangkatkan dengan angka yang ditentukan</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-emerald-300">Fix</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan bagian integer dari sebuah angka</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-emerald-300">Format</td><td class="px-6 py-3 text-sm text-gray-300">Memformat nilai numerik dengan format yang ditentukan</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-emerald-300">Int</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan bagian integer dari sebuah angka</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-emerald-300">Max</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan nilai maksimum dalam satu set nilai</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-emerald-300">Min</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan nilai minimum dalam satu set nilai</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-emerald-300">Randomize</td><td class="px-6 py-3 text-sm text-gray-300">Menginisialisasi generator angka acak (digunakan oleh Rnd()) dengan seed</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-emerald-300">Rnd</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan angka acak</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-emerald-300">Round</td><td class="px-6 py-3 text-sm text-gray-300">Membulatkan angka ke jumlah tempat desimal yang ditentukan</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-emerald-300">Sgn</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan tanda dari sebuah angka</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-emerald-300">Sqr</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan akar kuadrat dari sebuah angka</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-emerald-300">Sum</td><td class="px-6 py-3 text-sm text-gray-300">Menghitung jumlah dari satu set nilai</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-emerald-300">Val</td><td class="px-6 py-3 text-sm text-gray-300">Membaca string dan mengembalikan angka yang ditemukan dalam string</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- MS Access Date Functions -->
+        <div class="mb-12">
+            <div class="flex items-center gap-3 mb-5">
+                <div class="w-1 h-8 bg-violet-500 rounded-full"></div>
+                <h2 class="text-2xl font-semibold text-white flex items-center gap-2">
+                    <i class="fas fa-clock text-violet-400"></i>
+                    MS Access Date Functions
+                </h2>
+                <span class="bg-violet-600 text-xs px-3 py-1 rounded-full text-white ml-auto">20 fungsi</span>
+            </div>
+            <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden shadow-2xl">
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-gray-700">
+                            <tr>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-gray-200 uppercase tracking-wider">Function</th>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-gray-200 uppercase tracking-wider">Deskripsi (Terjemahan)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-700">
+                            <tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-violet-300">Date</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan tanggal sistem saat ini</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-violet-300">DateAdd</td><td class="px-6 py-3 text-sm text-gray-300">Menambahkan interval waktu/tanggal ke tanggal dan kemudian mengembalikan tanggal</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-violet-300">DateDiff</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan perbedaan antara dua tanggal</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-violet-300">DatePart</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan bagian tertentu dari tanggal (sebagai integer)</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-violet-300">DateSerial</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan tanggal dari bagian yang ditentukan (nilai tahun, bulan, dan hari)</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-violet-300">DateValue</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan tanggal berdasarkan string</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-violet-300">Day</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan hari dalam bulan untuk tanggal yang diberikan</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-violet-300">Format</td><td class="px-6 py-3 text-sm text-gray-300">Memformat nilai tanggal dengan format yang ditentukan</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-violet-300">Hour</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan bagian jam dari waktu/datetime</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-violet-300">Minute</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan bagian menit dari waktu/datetime</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-violet-300">Month</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan bagian bulan dari tanggal yang diberikan</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-violet-300">MonthName</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan nama bulan berdasarkan angka</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-violet-300">Now</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan tanggal dan waktu saat ini berdasarkan tanggal dan waktu sistem komputer</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-violet-300">Second</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan bagian detik dari waktu/datetime</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-violet-300">Time</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan waktu sistem saat ini</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-violet-300">TimeSerial</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan waktu dari bagian yang ditentukan (nilai jam, menit, dan detik)</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-violet-300">TimeValue</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan waktu berdasarkan string</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-violet-300">Weekday</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan nomor hari kerja untuk tanggal yang diberikan</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-violet-300">WeekdayName</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan nama hari kerja berdasarkan angka</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-violet-300">Year</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan bagian tahun dari tanggal yang diberikan</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- MS Access Other Functions -->
+        <div class="mb-12">
+            <div class="flex items-center gap-3 mb-5">
+                <div class="w-1 h-8 bg-fuchsia-500 rounded-full"></div>
+                <h2 class="text-2xl font-semibold text-white flex items-center gap-2">
+                    <i class="fas fa-ellipsis-h text-fuchsia-400"></i>
+                    MS Access Other Functions
+                </h2>
+                <span class="bg-fuchsia-600 text-xs px-3 py-1 rounded-full text-white ml-auto">5 fungsi</span>
+            </div>
+            <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden shadow-2xl">
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-gray-700">
+                            <tr>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-gray-200 uppercase tracking-wider">Function</th>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-gray-200 uppercase tracking-wider">Deskripsi (Terjemahan)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-700">
+                            <tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-fuchsia-300">CurrentUser</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan nama pengguna database saat ini</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-fuchsia-300">Environ</td><td class="px-6 py-3 text-sm text-gray-300">Mengembalikan string yang berisi nilai variabel lingkungan sistem operasi</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-fuchsia-300">IsDate</td><td class="px-6 py-3 text-sm text-gray-300">Memeriksa apakah suatu ekspresi dapat dikonversi menjadi tanggal</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-fuchsia-300">IsNull</td><td class="px-6 py-3 text-sm text-gray-300">Memeriksa apakah suatu ekspresi berisi Null (tidak ada data)</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-fuchsia-300">IsNumeric</td><td class="px-6 py-3 text-sm text-gray-300">Memeriksa apakah suatu ekspresi adalah angka yang valid</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- SQL Statements (Ringkasan) -->
+        <div class="mb-12">
+            <div class="flex items-center gap-3 mb-5">
+                <div class="w-1 h-8 bg-amber-500 rounded-full"></div>
+                <h2 class="text-2xl font-semibold text-white flex items-center gap-2">
+                    <i class="fas fa-terminal text-amber-400"></i>
+                    SQL Statements & Syntax
+                </h2>
+                <span class="bg-amber-600 text-xs px-3 py-1 rounded-full text-white ml-auto">28 pernyataan</span>
+            </div>
+            <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden shadow-2xl">
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-gray-700">
+                            <tr>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-gray-200 uppercase tracking-wider">SQL Statement</th>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-gray-200 uppercase tracking-wider">Syntax (Ringkasan)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-700">
+                            <tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-amber-300">AND / OR</td><td class="px-6 py-3 text-sm text-gray-300">SELECT column_name(s) FROM table_name WHERE condition AND|OR condition</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-amber-300">ALTER TABLE</td><td class="px-6 py-3 text-sm text-gray-300">ALTER TABLE table_name ADD column_name datatype atau DROP COLUMN column_name</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-amber-300">AS (alias)</td><td class="px-6 py-3 text-sm text-gray-300">SELECT column_name AS column_alias FROM table_name</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-amber-300">BETWEEN</td><td class="px-6 py-3 text-sm text-gray-300">SELECT column_name(s) FROM table_name WHERE column_name BETWEEN value1 AND value2</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-amber-300">CREATE DATABASE</td><td class="px-6 py-3 text-sm text-gray-300">CREATE DATABASE database_name</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-amber-300">CREATE TABLE</td><td class="px-6 py-3 text-sm text-gray-300">CREATE TABLE table_name (column_name1 data_type, ...)</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-amber-300">CREATE INDEX</td><td class="px-6 py-3 text-sm text-gray-300">CREATE INDEX index_name ON table_name (column_name)</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-amber-300">CREATE VIEW</td><td class="px-6 py-3 text-sm text-gray-300">CREATE VIEW view_name AS SELECT column_name(s) FROM table_name WHERE condition</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-amber-300">DELETE</td><td class="px-6 py-3 text-sm text-gray-300">DELETE FROM table_name WHERE some_column=some_value</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-amber-300">DROP DATABASE</td><td class="px-6 py-3 text-sm text-gray-300">DROP DATABASE database_name</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-amber-300">DROP INDEX</td><td class="px-6 py-3 text-sm text-gray-300">DROP INDEX table_name.index_name (SQL Server) atau variasi sesuai DB</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-amber-300">DROP TABLE</td><td class="px-6 py-3 text-sm text-gray-300">DROP TABLE table_name</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-amber-300">EXISTS</td><td class="px-6 py-3 text-sm text-gray-300">IF EXISTS (SELECT * FROM table_name WHERE id = ?) BEGIN ... END</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-amber-300">GROUP BY</td><td class="px-6 py-3 text-sm text-gray-300">SELECT column_name, aggregate_function(column_name) FROM table_name GROUP BY column_name</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-amber-300">HAVING</td><td class="px-6 py-3 text-sm text-gray-300">SELECT column_name, aggregate_function(column_name) FROM table_name GROUP BY column_name HAVING condition</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-amber-300">IN</td><td class="px-6 py-3 text-sm text-gray-300">SELECT column_name(s) FROM table_name WHERE column_name IN (value1,value2,...)</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-amber-300">INSERT INTO</td><td class="px-6 py-3 text-sm text-gray-300">INSERT INTO table_name VALUES (value1, value2, ...) atau INSERT INTO table_name (column1, ...) VALUES (value1, ...)</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-amber-300">JOIN (INNER)</td><td class="px-6 py-3 text-sm text-gray-300">SELECT column_name(s) FROM table1 INNER JOIN table2 ON table1.column = table2.column</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-amber-300">LEFT JOIN</td><td class="px-6 py-3 text-sm text-gray-300">SELECT column_name(s) FROM table1 LEFT JOIN table2 ON table1.column = table2.column</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-amber-300">RIGHT JOIN</td><td class="px-6 py-3 text-sm text-gray-300">SELECT column_name(s) FROM table1 RIGHT JOIN table2 ON table1.column = table2.column</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-amber-300">FULL JOIN</td><td class="px-6 py-3 text-sm text-gray-300">SELECT column_name(s) FROM table1 FULL JOIN table2 ON table1.column = table2.column</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-amber-300">LIKE</td><td class="px-6 py-3 text-sm text-gray-300">SELECT column_name(s) FROM table_name WHERE column_name LIKE pattern</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-amber-300">ORDER BY</td><td class="px-6 py-3 text-sm text-gray-300">SELECT column_name(s) FROM table_name ORDER BY column_name [ASC|DESC]</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-amber-300">SELECT</td><td class="px-6 py-3 text-sm text-gray-300">SELECT column_name(s) FROM table_name</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-amber-300">SELECT DISTINCT</td><td class="px-6 py-3 text-sm text-gray-300">SELECT DISTINCT column_name(s) FROM table_name</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-amber-300">SELECT INTO</td><td class="px-6 py-3 text-sm text-gray-300">SELECT * INTO new_table FROM old_table atau SELECT column_name(s) INTO new_table FROM old_table</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-amber-300">SELECT TOP</td><td class="px-6 py-3 text-sm text-gray-300">SELECT TOP number|percent column_name(s) FROM table_name</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-amber-300">TRUNCATE TABLE</td><td class="px-6 py-3 text-sm text-gray-300">TRUNCATE TABLE table_name</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-amber-300">UNION / UNION ALL</td><td class="px-6 py-3 text-sm text-gray-300">SELECT column_name(s) FROM table1 UNION [ALL] SELECT column_name(s) FROM table2</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-amber-300">UPDATE</td><td class="px-6 py-3 text-sm text-gray-300">UPDATE table_name SET column1=value, column2=value WHERE condition</td></tr>
+<tr class="hover:bg-gray-750"><td class="px-6 py-3 font-mono text-sm text-amber-300">WHERE</td><td class="px-6 py-3 text-sm text-gray-300">SELECT column_name(s) FROM table_name WHERE condition</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-16 border-t border-gray-800 pt-8 text-center">
+            <div class="flex flex-wrap justify-center gap-2 mb-4">
+                <span class="bg-gray-800 px-4 py-2 rounded-full text-sm text-gray-400"><i class="fas fa-database mr-2 text-indigo-400"></i>MySQLi: 84</span>
+                <span class="bg-gray-800 px-4 py-2 rounded-full text-sm text-gray-400"><i class="fas fa-network-wired mr-2 text-purple-400"></i>Network: 33</span>
+                <span class="bg-gray-800 px-4 py-2 rounded-full text-sm text-gray-400"><i class="fas fa-print mr-2 text-pink-400"></i>Output: 17</span>
+                <span class="bg-gray-800 px-4 py-2 rounded-full text-sm text-gray-400"><i class="fas fa-code mr-2 text-blue-400"></i>Regex: 10</span>
+                <span class="bg-gray-800 px-4 py-2 rounded-full text-sm text-gray-400"><i class="fas fa-file-code mr-2 text-green-400"></i>SimpleXML: 24</span>
+                <span class="bg-gray-800 px-4 py-2 rounded-full text-sm text-gray-400"><i class="fas fa-database mr-2 text-orange-400"></i>SQL Server: 84</span>
+                <span class="bg-gray-800 px-4 py-2 rounded-full text-sm text-gray-400"><i class="fas fa-table mr-2 text-lime-400"></i>MS Access: 65</span>
+            </div>
+            <p class="text-gray-500 text-sm">
+                <i class="far fa-copyright mr-1"></i> 2026 Dokumentasi Fungsi PHP & SQL - Total ±317 fungsi<br>
+                <span class="text-xs">Tema gelap modern dengan Tailwind CSS | Font Inter untuk keterbacaan optimal</span>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
